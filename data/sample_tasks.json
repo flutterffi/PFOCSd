@@ -1,0 +1,26 @@
+[
+  {
+    "title": "inspect message dispatch flow",
+    "tags": [
+      "runtime",
+      "objc"
+    ],
+    "state": "todo"
+  },
+  {
+    "title": "review block capture behavior",
+    "tags": [
+      "memory",
+      "blocks"
+    ],
+    "state": "doing"
+  },
+  {
+    "title": "compare KVC and direct property access",
+    "tags": [
+      "kvc",
+      "models"
+    ],
+    "state": "done"
+  }
+]

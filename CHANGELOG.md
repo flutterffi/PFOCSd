@@ -12,3 +12,9 @@
 - Added `--state` filtering to the task board CLI so one board section can be rendered on demand.
 - Added state parsing and validation with readable error output for unsupported filter values.
 - Expanded the README examples to show filtered project execution.
+
+## 0.3.0 - 2026-05-28
+
+- Added JSON-based task loading and saving for `01_task_board_cli` with `--load` and `--save`.
+- Added a dedicated `PFTaskFileStore` for task mapping, validation, and disk persistence.
+- Added a sample task dataset and expanded the README with persistence examples.

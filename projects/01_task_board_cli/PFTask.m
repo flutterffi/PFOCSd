@@ -11,6 +11,16 @@ NSString *PFTaskStateLabel(PFTaskState state) {
     }
 }
 
+NSNumber *PFTaskStateNumberFromLabel(NSString *label) {
+    NSDictionary<NSString *, NSNumber *> *stateMap = @{
+        @"todo": @(PFTaskStateTodo),
+        @"doing": @(PFTaskStateDoing),
+        @"done": @(PFTaskStateDone)
+    };
+
+    return stateMap[label.lowercaseString];
+}
+
 @interface PFTask ()
 @property (nonatomic, copy, readwrite) NSString *title;
 @property (nonatomic, copy, readwrite) NSArray<NSString *> *tags;
@@ -29,6 +39,14 @@ NSString *PFTaskStateLabel(PFTaskState state) {
         _state = state;
     }
     return self;
+}
+
+- (NSDictionary<NSString *, id> *)dictionaryRepresentation {
+    return @{
+        @"title": self.title,
+        @"tags": self.tags,
+        @"state": PFTaskStateLabel(self.state)
+    };
 }
 
 @end
