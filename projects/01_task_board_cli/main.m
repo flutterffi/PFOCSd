@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PFCompactRenderer.h"
 #import "PFConsoleRenderer.h"
 #import "PFTaskFileStore.h"
 
@@ -21,6 +22,7 @@ int main(int argc, const char * argv[]) {
         NSNumber *stateFilter = nil;
         NSString *loadPath = nil;
         NSString *savePath = nil;
+        NSString *format = @"verbose";
 
         for (int i = 1; i < argc; i++) {
             NSString *argument = [NSString stringWithUTF8String:argv[i]];
@@ -51,6 +53,17 @@ int main(int argc, const char * argv[]) {
                 }
                 savePath = [NSString stringWithUTF8String:argv[i + 1]];
                 i += 1;
+            } else if ([argument isEqualToString:@"--format"]) {
+                if (i + 1 >= argc) {
+                    NSLog(@"error: missing value for --format");
+                    return 1;
+                }
+                format = [[NSString stringWithUTF8String:argv[i + 1]] lowercaseString];
+                if (![@[@"verbose", @"compact"] containsObject:format]) {
+                    NSLog(@"error: unsupported format '%@'. Use verbose or compact.", format);
+                    return 1;
+                }
+                i += 1;
             } else {
                 NSLog(@"error: unsupported argument '%@'", argument);
                 return 1;
@@ -74,7 +87,9 @@ int main(int argc, const char * argv[]) {
         }
 
         PFTaskBoard *board = [[PFTaskBoard alloc] initWithTasks:tasks];
-        PFConsoleRenderer *renderer = [[PFConsoleRenderer alloc] init];
+        id<PFTaskRendering> renderer = [format isEqualToString:@"compact"]
+            ? [[PFCompactRenderer alloc] init]
+            : [[PFConsoleRenderer alloc] init];
         [renderer renderBoard:board onlyState:stateFilter];
     }
     return 0;

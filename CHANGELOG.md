@@ -18,3 +18,9 @@
 - Added JSON-based task loading and saving for `01_task_board_cli` with `--load` and `--save`.
 - Added a dedicated `PFTaskFileStore` for task mapping, validation, and disk persistence.
 - Added a sample task dataset and expanded the README with persistence examples.
+
+## 0.4.0 - 2026-05-28
+
+- Added a `PFTaskRendering` protocol to decouple board rendering from the CLI entry point.
+- Kept the existing verbose renderer and added a new `PFCompactRenderer`.
+- Added `--format verbose|compact` support and documented the new output modes.

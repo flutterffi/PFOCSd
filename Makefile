@@ -19,12 +19,13 @@ run:
 	fi
 	@mkdir -p "$(BUILD_DIR)"
 	@set -e; \
+	output_name=$$(echo "$(FILE)" | tr '/' '_' | sed 's/\.m$$//'); \
 	if [ "$$(basename "$(FILE)")" = "main.m" ]; then \
-		clang -fobjc-arc -framework Foundation "$$(dirname "$(FILE)")"/*.m -o "$(BUILD_DIR)/run-target"; \
+		clang -fobjc-arc -framework Foundation "$$(dirname "$(FILE)")"/*.m -o "$(BUILD_DIR)/$$output_name"; \
 	else \
-		clang -fobjc-arc -framework Foundation "$(FILE)" -o "$(BUILD_DIR)/run-target"; \
-	fi
-	@"$(BUILD_DIR)/run-target" $(ARGS)
+		clang -fobjc-arc -framework Foundation "$(FILE)" -o "$(BUILD_DIR)/$$output_name"; \
+	fi; \
+	"$(BUILD_DIR)/$$output_name" $(ARGS)
 
 check:
 	@mkdir -p "$(BUILD_DIR)"

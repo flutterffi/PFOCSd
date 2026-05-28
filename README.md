@@ -121,6 +121,8 @@ make run FILE=projects/01_task_board_cli/main.m
 make run FILE=projects/01_task_board_cli/main.m ARGS="--state done"
 make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json"
 make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json --state doing"
+make run FILE=projects/01_task_board_cli/main.m ARGS="--format compact"
+make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json --format compact"
 make run FILE=projects/01_task_board_cli/main.m ARGS="--save /tmp/pfocsd-tasks.json"
 make check
 make clean
@@ -147,6 +149,7 @@ clang -fobjc-arc -framework Foundation projects/01_task_board_cli/*.m -o /tmp/pf
 /tmp/pfocsd-task-board
 /tmp/pfocsd-task-board --load data/sample_tasks.json
 /tmp/pfocsd-task-board --state done
+/tmp/pfocsd-task-board --format compact
 /tmp/pfocsd-task-board --save /tmp/pfocsd-tasks.json
 ```
 
@@ -154,6 +157,7 @@ The task board CLI also supports:
 
 - `--load <file>` to read tasks from a JSON file
 - `--save <file>` to write the current task list to a JSON file
+- `--format verbose|compact` to switch renderers
 - built-in sample tasks when `--load` is not provided
 
 ## How To Practice
