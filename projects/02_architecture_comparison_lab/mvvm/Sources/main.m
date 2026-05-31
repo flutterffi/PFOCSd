@@ -33,13 +33,17 @@ int main(void) {
 
         NSError *error = nil;
         NSString *path = [viewModel saveCurrentTasks:&error];
-        NSLog(@"saved path -> %@", path);
+        NSLog(@"%@", [viewModel saveFeedbackMessageForPath:path error:error]);
         if (path != nil) {
             [viewModel reloadTasksFromPath:path error:&error];
         }
+        [viewModel simulateNextSaveFailure];
+        NSString *failedPath = [viewModel saveCurrentTasks:&error];
+        NSLog(@"[MVVM] Save Failure Drill");
+        NSLog(@"%@", [viewModel saveFeedbackMessageForPath:failedPath error:error]);
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Reloaded Tasks"];
 
-        // Practice idea: combine blocked-only screen state, priority sorting, and empty-state handling and keep the screen-state shaping in the view-model layer.
+        // Practice idea: compare how much cleaner save-failure wording feels once the view model owns the feedback text.
     }
     return 0;
 }

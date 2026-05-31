@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray<PFVIPERStudyTask *> *)tasksFilteredByTag:(nullable NSString *)tag
                                               state:(nullable NSNumber *)state;
 - (NSArray<PFVIPERStudyTask *> *)prioritySortedTasks;
+- (void)simulateNextSaveFailure;
 - (nullable NSString *)saveTasksWithError:(NSError **)error;
 - (BOOL)reloadTasksFromPath:(NSString *)path error:(NSError **)error;
 @end

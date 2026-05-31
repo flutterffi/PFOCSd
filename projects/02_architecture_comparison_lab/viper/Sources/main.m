@@ -31,9 +31,11 @@ int main(void) {
         [presenter showTasksFilteredByTag:@"memory"
                                     state:@(PFVIPERStudyTaskStateBlocked)];
         [presenter saveAndReload];
+        [presenter simulateNextSaveFailure];
+        [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil];
 
-        // Practice idea: combine blocked-only routing, priority sorting, and empty-state messaging while keeping query rules inside the interactor.
+        // Practice idea: compare how much cleaner save-failure messaging feels once the router and presenter share the narration work.
     }
     return 0;
 }

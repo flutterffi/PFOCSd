@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)titleForFilteredListWithTag:(NSString *)tag;
 - (NSString *)titleForFilteredListWithTag:(nullable NSString *)tag state:(nullable NSNumber *)state;
 - (NSString *)emptyMessageForTag:(nullable NSString *)tag state:(nullable NSNumber *)state;
-- (NSString *)messageForSavedPath:(nullable NSString *)path;
+- (NSString *)messageForSavedPath:(nullable NSString *)path error:(nullable NSError *)error;
 - (NSString *)messageForReloadResult:(BOOL)success;
 @end
 

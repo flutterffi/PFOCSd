@@ -4,6 +4,12 @@ static NSString *PFVIPERPlannerPath(void) {
     return [NSTemporaryDirectory() stringByAppendingPathComponent:@"pfocsd-viper-planner.json"];
 }
 
+static NSError *PFVIPERSimulatedSaveError(void) {
+    return [NSError errorWithDomain:@"PFOCSd.ArchitectureLab"
+                               code:104
+                           userInfo:@{NSLocalizedDescriptionKey: @"simulated disk write failure"}];
+}
+
 static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
     if ([value isEqualToString:@"done"]) {
         return PFVIPERStudyTaskStateDone;
@@ -14,7 +20,13 @@ static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
     return PFVIPERStudyTaskStateTodo;
 }
 
-@implementation PFVIPERStudyTaskStore
+@implementation PFVIPERStudyTaskStore {
+    BOOL _shouldFailNextSave;
+}
+
+- (void)simulateNextSaveFailure {
+    _shouldFailNextSave = YES;
+}
 
 - (NSArray<PFVIPERStudyTask *> *)defaultTasks {
     return @[
@@ -34,6 +46,14 @@ static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
 }
 
 - (nullable NSString *)saveTasks:(NSArray<PFVIPERStudyTask *> *)tasks error:(NSError **)error {
+    if (_shouldFailNextSave) {
+        _shouldFailNextSave = NO;
+        if (error != NULL) {
+            *error = PFVIPERSimulatedSaveError();
+        }
+        return nil;
+    }
+
     NSMutableArray<NSDictionary<NSString *, id> *> *payload = [NSMutableArray arrayWithCapacity:tasks.count];
     for (PFVIPERStudyTask *task in tasks) {
         [payload addObject:[task dictionaryRepresentation]];

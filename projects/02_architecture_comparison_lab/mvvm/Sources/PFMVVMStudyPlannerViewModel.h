@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
                                                                state:(nullable NSNumber *)state;
 - (NSArray<PFMVVMStudyTaskViewModel *> *)prioritySortedTaskViewModels;
 - (NSString *)emptyMessageForTag:(nullable NSString *)tag state:(nullable NSNumber *)state;
+- (void)simulateNextSaveFailure;
+- (NSString *)saveFeedbackMessageForPath:(nullable NSString *)path error:(nullable NSError *)error;
 - (nullable NSString *)saveCurrentTasks:(NSError **)error;
 - (BOOL)reloadTasksFromPath:(NSString *)path error:(NSError **)error;
 @end

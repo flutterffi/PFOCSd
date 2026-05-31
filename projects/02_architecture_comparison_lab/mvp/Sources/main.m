@@ -27,9 +27,11 @@ int main(void) {
                                     state:@(PFMVPStudyTaskStateBlocked)
                                     title:@"Combined Filter: memory + blocked"];
         [presenter saveAndReload];
+        [presenter simulateNextSaveFailure];
+        [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil title:@"Reloaded Tasks"];
 
-        // Practice idea: combine blocked-only rendering, priority sorting, and empty-state messaging and keep the branching testable from the presenter.
+        // Practice idea: compare how much easier save-failure narration is once the presenter owns the branch.
     }
     return 0;
 }

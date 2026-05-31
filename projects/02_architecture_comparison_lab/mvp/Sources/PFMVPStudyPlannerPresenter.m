@@ -89,9 +89,19 @@
     [self showLinesForTasks:sortedTasks title:title];
 }
 
+- (void)simulateNextSaveFailure {
+    [self.store simulateNextSaveFailure];
+}
+
 - (void)saveAndReload {
     NSError *error = nil;
     NSString *path = [self.store saveTasks:self.tasks error:&error];
+    if (path == nil) {
+        [self.view displayMessage:[NSString stringWithFormat:@"save failed: %@",
+                                   error.localizedDescription ?: @"unknown error"]
+                           title:@"Save Failure Drill"];
+        return;
+    }
     [self.view displaySavedPath:path];
     if (path == nil) {
         return;

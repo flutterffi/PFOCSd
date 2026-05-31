@@ -28,9 +28,13 @@ int main(void) {
         if (path != nil) {
             [controller reloadTasksFromPath:path error:&error];
         }
+        [controller.store simulateNextSaveFailure];
+        NSString *failedPath = [controller saveCurrentTasks:&error];
+        NSLog(@"[MVC] Save Failure Drill");
+        NSLog(@"%@", failedPath != nil ? @"unexpected save success" : error.localizedDescription);
         [controller renderTasks:controller.tasks title:@"Reloaded Tasks"];
 
-        // Practice idea: combine state filtering, priority sorting, and empty-state handling and watch how much branching stays in the controller.
+        // Practice idea: compare how much persistence detail leaks out once MVC handles the save-failure branch at the entry point.
     }
     return 0;
 }

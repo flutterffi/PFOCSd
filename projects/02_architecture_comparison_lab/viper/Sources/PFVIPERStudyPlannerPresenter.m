@@ -60,10 +60,14 @@
                 title:@"Priority Sorted"];
 }
 
+- (void)simulateNextSaveFailure {
+    [self.interactor simulateNextSaveFailure];
+}
+
 - (void)saveAndReload {
     NSError *error = nil;
     NSString *path = [self.interactor saveTasksWithError:&error];
-    [self.view displayActionMessage:[self.router messageForSavedPath:path]];
+    [self.view displayActionMessage:[self.router messageForSavedPath:path error:error]];
     if (path == nil) {
         return;
     }

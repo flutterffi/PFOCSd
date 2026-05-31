@@ -39,6 +39,7 @@ Core practice files:
 - `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md`
 - `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md`
 - `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md`
+- `projects/02_architecture_comparison_lab/ROUND_4_PERSISTENCE_FEEDBACK.md`
 
 ## Shared Feature Brief
 

@@ -4,6 +4,12 @@ static NSString *PFMVCPlannerPath(void) {
     return [NSTemporaryDirectory() stringByAppendingPathComponent:@"pfocsd-mvc-planner.json"];
 }
 
+static NSError *PFMVCSimulatedSaveError(void) {
+    return [NSError errorWithDomain:@"PFOCSd.ArchitectureLab"
+                               code:101
+                           userInfo:@{NSLocalizedDescriptionKey: @"simulated disk write failure"}];
+}
+
 static PFMVCStudyTaskState PFMVCStateFromString(NSString *value) {
     if ([value isEqualToString:@"done"]) {
         return PFMVCStudyTaskStateDone;
@@ -14,7 +20,13 @@ static PFMVCStudyTaskState PFMVCStateFromString(NSString *value) {
     return PFMVCStudyTaskStateTodo;
 }
 
-@implementation PFMVCStudyTaskStore
+@implementation PFMVCStudyTaskStore {
+    BOOL _shouldFailNextSave;
+}
+
+- (void)simulateNextSaveFailure {
+    _shouldFailNextSave = YES;
+}
 
 - (NSArray<PFMVCStudyTask *> *)defaultTasks {
     return @[
@@ -34,6 +46,14 @@ static PFMVCStudyTaskState PFMVCStateFromString(NSString *value) {
 }
 
 - (nullable NSString *)saveTasks:(NSArray<PFMVCStudyTask *> *)tasks error:(NSError **)error {
+    if (_shouldFailNextSave) {
+        _shouldFailNextSave = NO;
+        if (error != NULL) {
+            *error = PFMVCSimulatedSaveError();
+        }
+        return nil;
+    }
+
     NSMutableArray<NSDictionary<NSString *, id> *> *payload = [NSMutableArray arrayWithCapacity:tasks.count];
     for (PFMVCStudyTask *task in tasks) {
         [payload addObject:[task dictionaryRepresentation]];

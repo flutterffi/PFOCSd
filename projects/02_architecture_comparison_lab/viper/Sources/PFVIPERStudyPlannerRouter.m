@@ -44,9 +44,10 @@
             [parts componentsJoinedByString:@", "]];
 }
 
-- (NSString *)messageForSavedPath:(NSString *)path {
+- (NSString *)messageForSavedPath:(NSString *)path error:(NSError *)error {
     if (path.length == 0) {
-        return @"save failed";
+        return [NSString stringWithFormat:@"save failed: %@",
+                error.localizedDescription ?: @"unknown error"];
     }
     return [NSString stringWithFormat:@"saved path -> %@", path];
 }

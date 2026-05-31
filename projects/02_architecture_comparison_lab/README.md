@@ -73,6 +73,7 @@ Suggested feature set:
 - `ROUND_1_BLOCKED_STATE.md`
 - `ROUND_2_PRIORITY_SUPPORT.md`
 - `ROUND_3_COMBINED_FILTERING.md`
+- `ROUND_4_PERSISTENCE_FEEDBACK.md`
 
 ## What To Write Down After Each Version
 

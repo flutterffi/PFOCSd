@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showTasksFilteredByTag:(nullable NSString *)tag
                          state:(nullable NSNumber *)state;
 - (void)showPrioritySortedTasks;
+- (void)simulateNextSaveFailure;
 - (void)saveAndReload;
 @end
 

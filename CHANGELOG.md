@@ -96,3 +96,9 @@
 - Implemented the third shared architecture drill by adding combined `tag + state` filtering across MVC, MVVM, MVP, and VIPER.
 - Added matching and empty-result filter flows in every architecture target so state queries and empty-state handling can be compared directly.
 - Added a focused round-three guide so filtering ownership, presenter branching, and empty-state responsibilities are easy to review.
+
+## 0.17.0 - 2026-05-31
+
+- Implemented the fourth shared architecture drill by adding a simulated save-failure path across MVC, MVVM, MVP, and VIPER.
+- Added architecture-specific save-feedback flows so persistence errors can be compared through controller, view-model, presenter, and router boundaries.
+- Added a focused round-four guide so failure ownership and storage-detail leakage are easy to review.

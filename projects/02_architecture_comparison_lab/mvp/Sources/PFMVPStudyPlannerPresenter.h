@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                          state:(nullable NSNumber *)state
                          title:(NSString *)title;
 - (void)showPrioritySortedTasksWithTitle:(NSString *)title;
+- (void)simulateNextSaveFailure;
 - (void)saveAndReload;
 @end
 

@@ -84,6 +84,10 @@
     }];
 }
 
+- (void)simulateNextSaveFailure {
+    [self.store simulateNextSaveFailure];
+}
+
 - (nullable NSString *)saveTasksWithError:(NSError **)error {
     return [self.store saveTasks:self.tasks error:error];
 }

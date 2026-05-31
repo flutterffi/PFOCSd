@@ -104,6 +104,18 @@
             [parts componentsJoinedByString:@", "]];
 }
 
+- (void)simulateNextSaveFailure {
+    [self.store simulateNextSaveFailure];
+}
+
+- (NSString *)saveFeedbackMessageForPath:(NSString *)path error:(NSError *)error {
+    if (path.length > 0) {
+        return [NSString stringWithFormat:@"saved path -> %@", path];
+    }
+    return [NSString stringWithFormat:@"save failed: %@",
+            error.localizedDescription ?: @"unknown error"];
+}
+
 - (nullable NSString *)saveCurrentTasks:(NSError **)error {
     return [self.store saveTasks:self.tasks error:error];
 }
