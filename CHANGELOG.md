@@ -60,3 +60,9 @@
 - Added the first architecture comparison lab targets with a runnable MVC implementation and a runnable MVVM implementation of the same study planner feature set.
 - Expanded the package and Xcode practice guide so architecture-level training now sits beside the language, intermediate, advanced, and project targets.
 - Added shared comparison docs so later MVP and VIPER implementations can be added against the same feature brief.
+
+## 0.11.0 - 2026-05-31
+
+- Added a runnable MVP implementation to the architecture comparison lab using a presenter and view protocol boundary.
+- Expanded the package so MVC, MVVM, and MVP can now be compared directly against the same study planner feature brief.
+- Updated the architecture lab progress docs so the next step is a focused VIPER implementation instead of a broad redesign.

@@ -15,7 +15,7 @@ Current progress:
 
 - MVC: scaffolded as a runnable package target
 - MVVM: scaffolded as a runnable package target
-- MVP: planned
+- MVP: scaffolded as a runnable package target
 - VIPER: planned
 
 ## Core Rule

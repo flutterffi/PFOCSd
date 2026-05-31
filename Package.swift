@@ -21,6 +21,7 @@ let package = Package(
         .executable(name: "A05Concurrency", targets: ["A05Concurrency"]),
         .executable(name: "P02StudyPlannerMVC", targets: ["P02StudyPlannerMVC"]),
         .executable(name: "P03StudyPlannerMVVM", targets: ["P03StudyPlannerMVVM"]),
+        .executable(name: "P04StudyPlannerMVP", targets: ["P04StudyPlannerMVP"]),
         .executable(name: "P01TaskBoardCLI", targets: ["P01TaskBoardCLI"]),
     ],
     targets: [
@@ -118,6 +119,13 @@ let package = Package(
         .executableTarget(
             name: "P03StudyPlannerMVVM",
             path: "projects/02_architecture_comparison_lab/mvvm/Sources",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "P04StudyPlannerMVP",
+            path: "projects/02_architecture_comparison_lab/mvp/Sources",
             linkerSettings: [
                 .linkedFramework("Foundation"),
             ]
