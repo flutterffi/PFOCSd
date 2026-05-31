@@ -40,6 +40,8 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `A04DesignPatterns`
 - `A05Concurrency`
 - `P01TaskBoardCLI`
+- `P02StudyPlannerMVC`
+- `P03StudyPlannerMVVM`
 
 ## Folder Guide
 

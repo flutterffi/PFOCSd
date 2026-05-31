@@ -54,3 +54,9 @@
 - Added advanced Objective-C practice targets for runtime dispatch, memory and blocks, KVC and KVO, design patterns, and concurrency.
 - Expanded the direct Xcode practice flow so the repository now covers foundations, intermediate lessons, advanced lessons, and the task board project through one package entry point.
 - Added visible extension prompts inside the new advanced targets so they can be used for progressive hands-on training instead of passive review.
+
+## 0.10.0 - 2026-05-31
+
+- Added the first architecture comparison lab targets with a runnable MVC implementation and a runnable MVVM implementation of the same study planner feature set.
+- Expanded the package and Xcode practice guide so architecture-level training now sits beside the language, intermediate, advanced, and project targets.
+- Added shared comparison docs so later MVP and VIPER implementations can be added against the same feature brief.

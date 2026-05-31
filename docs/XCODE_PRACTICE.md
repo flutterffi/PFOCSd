@@ -23,6 +23,8 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 11. `A04DesignPatterns`
 12. `A05Concurrency`
 13. `P01TaskBoardCLI`
+14. `P02StudyPlannerMVC`
+15. `P03StudyPlannerMVVM`
 
 ## How To Open
 
@@ -46,7 +48,9 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 10. move to `A03KVCAndKVO`
 11. move to `A04DesignPatterns`
 12. move to `A05Concurrency`
-13. finish with `P01TaskBoardCLI`
+13. move to `P01TaskBoardCLI`
+14. compare `P02StudyPlannerMVC`
+15. compare `P03StudyPlannerMVVM`
 
 ## What To Change First
 
