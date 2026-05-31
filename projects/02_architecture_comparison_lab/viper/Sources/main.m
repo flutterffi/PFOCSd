@@ -19,15 +19,17 @@ int main(void) {
         [presenter addTaskWithTitle:@"Compare VIPER with MVP"
                               notes:@"notice where routing and persistence messages live"
                                tags:@[@"architecture", @"comparison"]
+                           priority:5
                    estimatedMinutes:40];
         [presenter markTaskDoneAtIndex:0];
         [presenter markTaskBlockedAtIndex:2];
         [presenter showTasksFilteredByTag:@"architecture"];
         [presenter showTasksFilteredByTag:nil];
+        [presenter showPrioritySortedTasks];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil];
 
-        // Practice idea: add blocked-only routing and keep filtering rules inside the interactor.
+        // Practice idea: combine blocked-only routing with priority sorting and keep query rules inside the interactor.
     }
     return 0;
 }

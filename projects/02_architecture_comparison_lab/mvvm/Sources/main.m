@@ -13,11 +13,13 @@ int main(void) {
         [viewModel addTaskWithTitle:@"Compare MVC and MVVM"
                               notes:@"watch state shaping move into the view model"
                                tags:@[@"architecture", @"comparison"]
+                           priority:5
                    estimatedMinutes:35];
         [viewModel markTaskDoneAtIndex:0];
         [viewModel markTaskBlockedAtIndex:2];
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:@"architecture"] title:@"Filtered By Tag"];
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Blocked State Added"];
+        [view renderViewModels:[viewModel prioritySortedTaskViewModels] title:@"Priority Sorted"];
 
         NSError *error = nil;
         NSString *path = [viewModel saveCurrentTasks:&error];
@@ -27,7 +29,7 @@ int main(void) {
         }
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Reloaded Tasks"];
 
-        // Practice idea: add a blocked-only screen state and keep all label shaping in the view model layer.
+        // Practice idea: combine blocked-only screen state with priority sorting and keep all label shaping in the view-model layer.
     }
     return 0;
 }

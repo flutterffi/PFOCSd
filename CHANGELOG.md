@@ -84,3 +84,9 @@
 - Implemented the first shared architecture drill by adding a runnable `blocked` task state across MVC, MVVM, MVP, and VIPER.
 - Added explicit blocked-state actions in each architecture target so the same interaction can be traced through different responsibility splits.
 - Added a focused round-one guide so the first architecture comparison exercise is concrete, repeatable, and easy to review.
+
+## 0.15.0 - 2026-05-31
+
+- Implemented the second shared architecture drill by adding persistent task priority support across MVC, MVVM, MVP, and VIPER.
+- Added priority-sorted output flows in every architecture target so the same sorting requirement can be traced through different responsibility splits.
+- Added a focused round-two guide so priority modeling, formatting, and ordering tradeoffs can be compared directly.

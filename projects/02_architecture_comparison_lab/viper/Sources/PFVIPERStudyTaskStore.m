@@ -21,11 +21,13 @@ static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
         [[PFVIPERStudyTask alloc] initWithTitle:@"Review VIPER boundaries"
                                           notes:@"trace which layer owns each change"
                                            tags:@[@"architecture", @"viper"]
+                                       priority:2
                                estimatedMinutes:35
                                           state:PFVIPERStudyTaskStateTodo],
         [[PFVIPERStudyTask alloc] initWithTitle:@"Refactor persistence flow"
                                           notes:@"keep storage details inside the interactor"
                                            tags:@[@"persistence", @"interactor"]
+                                       priority:4
                                estimatedMinutes:30
                                           state:PFVIPERStudyTaskStateBlocked],
     ];
@@ -67,6 +69,7 @@ static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
         [tasks addObject:[[PFVIPERStudyTask alloc] initWithTitle:item[@"title"] ?: @"untitled"
                                                            notes:item[@"notes"] ?: @""
                                                             tags:item[@"tags"] ?: @[]
+                                                        priority:[item[@"priority"] integerValue]
                                                 estimatedMinutes:[item[@"estimatedMinutes"] integerValue]
                                                            state:PFVIPERStateFromString(item[@"state"] ?: @"todo")]];
     }

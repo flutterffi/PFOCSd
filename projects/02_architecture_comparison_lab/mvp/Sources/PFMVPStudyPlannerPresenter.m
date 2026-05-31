@@ -20,11 +20,13 @@
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes {
     NSMutableArray<PFMVPStudyTask *> *nextTasks = [self.tasks mutableCopy];
     [nextTasks addObject:[[PFMVPStudyTask alloc] initWithTitle:title
                                                          notes:notes
                                                           tags:tags
+                                                      priority:priority
                                               estimatedMinutes:estimatedMinutes
                                                          state:PFMVPStudyTaskStateTodo]];
     self.tasks = [nextTasks copy];
@@ -55,19 +57,17 @@
         sourceTasks = [sourceTasks filteredArrayUsingPredicate:predicate];
     }
 
-    NSMutableArray<NSString *> *lines = [NSMutableArray arrayWithCapacity:sourceTasks.count];
-    NSUInteger index = 0;
-    for (PFMVPStudyTask *task in sourceTasks) {
-        [lines addObject:[NSString stringWithFormat:@"%lu. %@ | %@ | %ld min | %@",
-                          (unsigned long)(index + 1),
-                          task.title,
-                          PFMVPStudyTaskStateLabel(task.state),
-                          (long)task.estimatedMinutes,
-                          [task.tags componentsJoinedByString:@", "]]];
-        index += 1;
-    }
+    [self showLinesForTasks:sourceTasks title:title];
+}
 
-    [self.view displayLines:lines title:title];
+- (void)showPrioritySortedTasksWithTitle:(NSString *)title {
+    NSArray<PFMVPStudyTask *> *sortedTasks = [self.tasks sortedArrayUsingComparator:^NSComparisonResult(PFMVPStudyTask *lhs, PFMVPStudyTask *rhs) {
+        if (lhs.priority == rhs.priority) {
+            return [lhs.title compare:rhs.title];
+        }
+        return lhs.priority > rhs.priority ? NSOrderedAscending : NSOrderedDescending;
+    }];
+    [self showLinesForTasks:sortedTasks title:title];
 }
 
 - (void)saveAndReload {
@@ -81,6 +81,22 @@
     if (loadedTasks != nil) {
         self.tasks = loadedTasks;
     }
+}
+
+- (void)showLinesForTasks:(NSArray<PFMVPStudyTask *> *)tasks title:(NSString *)title {
+    NSMutableArray<NSString *> *lines = [NSMutableArray arrayWithCapacity:tasks.count];
+    NSUInteger index = 0;
+    for (PFMVPStudyTask *task in tasks) {
+        [lines addObject:[NSString stringWithFormat:@"%lu. %@ | %@ | P%ld | %ld min | %@",
+                          (unsigned long)(index + 1),
+                          task.title,
+                          PFMVPStudyTaskStateLabel(task.state),
+                          (long)task.priority,
+                          (long)task.estimatedMinutes,
+                          [task.tags componentsJoinedByString:@", "]]];
+        index += 1;
+    }
+    [self.view displayLines:lines title:title];
 }
 
 @end

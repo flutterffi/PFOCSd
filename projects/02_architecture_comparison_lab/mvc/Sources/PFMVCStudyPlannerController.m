@@ -18,11 +18,13 @@
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes {
     NSMutableArray<PFMVCStudyTask *> *nextTasks = [self.tasks mutableCopy];
     [nextTasks addObject:[[PFMVCStudyTask alloc] initWithTitle:title
                                                          notes:notes
                                                           tags:tags
+                                                      priority:priority
                                               estimatedMinutes:estimatedMinutes
                                                          state:PFMVCStudyTaskStateTodo]];
     self.tasks = [nextTasks copy];
@@ -57,6 +59,15 @@
     return [self.tasks filteredArrayUsingPredicate:predicate];
 }
 
+- (NSArray<PFMVCStudyTask *> *)tasksSortedByPriorityFromTasks:(NSArray<PFMVCStudyTask *> *)tasks {
+    return [tasks sortedArrayUsingComparator:^NSComparisonResult(PFMVCStudyTask *lhs, PFMVCStudyTask *rhs) {
+        if (lhs.priority == rhs.priority) {
+            return [lhs.title compare:rhs.title];
+        }
+        return lhs.priority > rhs.priority ? NSOrderedAscending : NSOrderedDescending;
+    }];
+}
+
 - (nullable NSString *)saveCurrentTasks:(NSError **)error {
     return [self.store saveTasks:self.tasks error:error];
 }
@@ -79,7 +90,7 @@
               task.title,
               PFMVCStudyTaskStateLabel(task.state),
               (long)task.estimatedMinutes,
-              [task.tags componentsJoinedByString:@", "]);
+              [NSString stringWithFormat:@"P%ld | %@", (long)task.priority, [task.tags componentsJoinedByString:@", "]]);
         index += 1;
     }
 }

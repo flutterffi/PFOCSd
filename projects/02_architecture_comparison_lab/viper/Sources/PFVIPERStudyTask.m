@@ -17,6 +17,7 @@ NSString *PFVIPERStudyTaskStateLabel(PFVIPERStudyTaskState state) {
 - (instancetype)initWithTitle:(NSString *)title
                         notes:(NSString *)notes
                          tags:(NSArray<NSString *> *)tags
+                     priority:(NSInteger)priority
              estimatedMinutes:(NSInteger)estimatedMinutes
                         state:(PFVIPERStudyTaskState)state {
     self = [super init];
@@ -24,6 +25,7 @@ NSString *PFVIPERStudyTaskStateLabel(PFVIPERStudyTaskState state) {
         _title = [title copy];
         _notes = [notes copy];
         _tags = [tags copy];
+        _priority = priority;
         _estimatedMinutes = estimatedMinutes;
         _state = state;
     }
@@ -35,6 +37,7 @@ NSString *PFVIPERStudyTaskStateLabel(PFVIPERStudyTaskState state) {
         @"title": self.title,
         @"notes": self.notes,
         @"tags": self.tags,
+        @"priority": @(self.priority),
         @"estimatedMinutes": @(self.estimatedMinutes),
         @"state": PFVIPERStudyTaskStateLabel(self.state),
     };

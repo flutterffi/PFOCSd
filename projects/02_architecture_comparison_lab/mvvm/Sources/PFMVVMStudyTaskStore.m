@@ -21,11 +21,13 @@ static PFMVVMStudyTaskState PFMVVMStateFromString(NSString *value) {
         [[PFMVVMStudyTask alloc] initWithTitle:@"Review ARC"
                                          notes:@"compare weak and copy"
                                           tags:@[@"memory", @"objc"]
+                                      priority:2
                               estimatedMinutes:25
                                          state:PFMVVMStudyTaskStateTodo],
         [[PFMVVMStudyTask alloc] initWithTitle:@"Practice KVC"
                                          notes:@"map payload into model"
                                           tags:@[@"data-flow", @"kvc"]
+                                      priority:4
                               estimatedMinutes:30
                                          state:PFMVVMStudyTaskStateBlocked],
     ];
@@ -67,6 +69,7 @@ static PFMVVMStudyTaskState PFMVVMStateFromString(NSString *value) {
         [tasks addObject:[[PFMVVMStudyTask alloc] initWithTitle:item[@"title"] ?: @"untitled"
                                                           notes:item[@"notes"] ?: @""
                                                            tags:item[@"tags"] ?: @[]
+                                                       priority:[item[@"priority"] integerValue]
                                                estimatedMinutes:[item[@"estimatedMinutes"] integerValue]
                                                           state:PFMVVMStateFromString(item[@"state"] ?: @"todo")]];
     }

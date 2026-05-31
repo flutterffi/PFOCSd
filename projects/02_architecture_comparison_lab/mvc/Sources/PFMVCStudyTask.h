@@ -14,11 +14,13 @@ FOUNDATION_EXPORT NSString *PFMVCStudyTaskStateLabel(PFMVCStudyTaskState state);
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSArray<NSString *> *tags;
+@property (nonatomic, assign) NSInteger priority;
 @property (nonatomic, assign) NSInteger estimatedMinutes;
 @property (nonatomic, assign) PFMVCStudyTaskState state;
 - (instancetype)initWithTitle:(NSString *)title
                         notes:(NSString *)notes
                          tags:(NSArray<NSString *> *)tags
+                     priority:(NSInteger)priority
              estimatedMinutes:(NSInteger)estimatedMinutes
                         state:(PFMVCStudyTaskState)state;
 - (NSDictionary<NSString *, id> *)dictionaryRepresentation;

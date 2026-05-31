@@ -51,6 +51,7 @@ For architecture comparison training, also use:
 - `projects/02_architecture_comparison_lab/CHALLENGES.md`
 - `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
 - `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md`
+- `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md`
 
 ## Folder Guide
 

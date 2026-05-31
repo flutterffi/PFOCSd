@@ -23,10 +23,12 @@
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes {
     [self.interactor addTaskWithTitle:title
                                 notes:notes
                                  tags:tags
+                             priority:priority
                      estimatedMinutes:estimatedMinutes];
 }
 
@@ -41,6 +43,11 @@
 - (void)showTasksFilteredByTag:(NSString *)tag {
     [self renderTasks:[self.interactor tasksFilteredByTag:tag]
                 title:[self.router titleForFilteredListWithTag:tag ?: @""]];
+}
+
+- (void)showPrioritySortedTasks {
+    [self renderTasks:[self.interactor prioritySortedTasks]
+                title:@"Priority Sorted"];
 }
 
 - (void)saveAndReload {
@@ -64,7 +71,7 @@
                           task.title,
                           PFVIPERStudyTaskStateLabel(task.state),
                           (long)task.estimatedMinutes,
-                          [task.tags componentsJoinedByString:@", "]]];
+                          [NSString stringWithFormat:@"P%ld | %@", (long)task.priority, [task.tags componentsJoinedByString:@", "]]]];
         index += 1;
     }
     [self.view displayLines:lines title:title];

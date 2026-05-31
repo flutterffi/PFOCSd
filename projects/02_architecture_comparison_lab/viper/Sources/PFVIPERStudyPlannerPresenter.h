@@ -17,10 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes;
 - (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
 - (void)showTasksFilteredByTag:(nullable NSString *)tag;
+- (void)showPrioritySortedTasks;
 - (void)saveAndReload;
 @end
 

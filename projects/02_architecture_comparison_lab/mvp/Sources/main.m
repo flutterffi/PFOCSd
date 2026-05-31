@@ -13,15 +13,17 @@ int main(void) {
         [presenter addTaskWithTitle:@"Compare MVC, MVVM, and MVP"
                               notes:@"watch presenter-owned formatting"
                                tags:@[@"architecture", @"comparison"]
+                           priority:5
                    estimatedMinutes:35];
         [presenter markTaskDoneAtIndex:0];
         [presenter markTaskBlockedAtIndex:2];
         [presenter showTasksFilteredByTag:@"architecture" title:@"Filtered By Tag"];
         [presenter showTasksFilteredByTag:nil title:@"Blocked State Added"];
+        [presenter showPrioritySortedTasksWithTitle:@"Priority Sorted"];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil title:@"Reloaded Tasks"];
 
-        // Practice idea: add blocked-only rendering and keep the branching testable from the presenter.
+        // Practice idea: combine blocked-only rendering with priority sorting and keep the branching testable from the presenter.
     }
     return 0;
 }

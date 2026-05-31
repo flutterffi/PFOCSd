@@ -12,10 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes;
 - (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
 - (NSArray<PFMVVMStudyTaskViewModel *> *)taskViewModelsFilteredByTag:(nullable NSString *)tag;
+- (NSArray<PFMVVMStudyTaskViewModel *> *)prioritySortedTaskViewModels;
 - (nullable NSString *)saveCurrentTasks:(NSError **)error;
 - (BOOL)reloadTasksFromPath:(NSString *)path error:(NSError **)error;
 @end

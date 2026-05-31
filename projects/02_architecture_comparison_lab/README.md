@@ -71,6 +71,7 @@ Suggested feature set:
 - `CHALLENGES.md`
 - `COMPARISON_WORKBOOK.md`
 - `ROUND_1_BLOCKED_STATE.md`
+- `ROUND_2_PRIORITY_SUPPORT.md`
 
 ## What To Write Down After Each Version
 

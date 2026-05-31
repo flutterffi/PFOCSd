@@ -18,11 +18,13 @@
 - (void)addTaskWithTitle:(NSString *)title
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
+                priority:(NSInteger)priority
         estimatedMinutes:(NSInteger)estimatedMinutes {
     NSMutableArray<PFMVVMStudyTask *> *nextTasks = [self.tasks mutableCopy];
     [nextTasks addObject:[[PFMVVMStudyTask alloc] initWithTitle:title
                                                           notes:notes
                                                            tags:tags
+                                                       priority:priority
                                                estimatedMinutes:estimatedMinutes
                                                           state:PFMVVMStudyTaskStateTodo]];
     self.tasks = [nextTasks copy];
@@ -53,8 +55,22 @@
         sourceTasks = [sourceTasks filteredArrayUsingPredicate:predicate];
     }
 
-    NSMutableArray<PFMVVMStudyTaskViewModel *> *viewModels = [NSMutableArray arrayWithCapacity:sourceTasks.count];
-    for (PFMVVMStudyTask *task in sourceTasks) {
+    return [self viewModelsFromTasks:sourceTasks];
+}
+
+- (NSArray<PFMVVMStudyTaskViewModel *> *)prioritySortedTaskViewModels {
+    NSArray<PFMVVMStudyTask *> *sortedTasks = [self.tasks sortedArrayUsingComparator:^NSComparisonResult(PFMVVMStudyTask *lhs, PFMVVMStudyTask *rhs) {
+        if (lhs.priority == rhs.priority) {
+            return [lhs.title compare:rhs.title];
+        }
+        return lhs.priority > rhs.priority ? NSOrderedAscending : NSOrderedDescending;
+    }];
+    return [self viewModelsFromTasks:sortedTasks];
+}
+
+- (NSArray<PFMVVMStudyTaskViewModel *> *)viewModelsFromTasks:(NSArray<PFMVVMStudyTask *> *)tasks {
+    NSMutableArray<PFMVVMStudyTaskViewModel *> *viewModels = [NSMutableArray arrayWithCapacity:tasks.count];
+    for (PFMVVMStudyTask *task in tasks) {
         [viewModels addObject:[[PFMVVMStudyTaskViewModel alloc] initWithTask:task]];
     }
     return [viewModels copy];

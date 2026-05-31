@@ -8,7 +8,8 @@
         _titleText = [NSString stringWithFormat:@"%@ [%@]",
                       task.title,
                       PFMVVMStudyTaskStateLabel(task.state)];
-        _detailText = [NSString stringWithFormat:@"%ld min | %@ | %@",
+        _detailText = [NSString stringWithFormat:@"P%ld | %ld min | %@ | %@",
+                       (long)task.priority,
                        (long)task.estimatedMinutes,
                        [task.tags componentsJoinedByString:@", "],
                        task.notes];
