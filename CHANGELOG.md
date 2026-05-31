@@ -90,3 +90,9 @@
 - Implemented the second shared architecture drill by adding persistent task priority support across MVC, MVVM, MVP, and VIPER.
 - Added priority-sorted output flows in every architecture target so the same sorting requirement can be traced through different responsibility splits.
 - Added a focused round-two guide so priority modeling, formatting, and ordering tradeoffs can be compared directly.
+
+## 0.16.0 - 2026-05-31
+
+- Implemented the third shared architecture drill by adding combined `tag + state` filtering across MVC, MVVM, MVP, and VIPER.
+- Added matching and empty-result filter flows in every architecture target so state queries and empty-state handling can be compared directly.
+- Added a focused round-three guide so filtering ownership, presenter branching, and empty-state responsibilities are easy to review.

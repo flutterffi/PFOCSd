@@ -41,8 +41,18 @@
 }
 
 - (void)showTasksFilteredByTag:(NSString *)tag {
-    [self renderTasks:[self.interactor tasksFilteredByTag:tag]
-                title:[self.router titleForFilteredListWithTag:tag ?: @""]];
+    [self showTasksFilteredByTag:tag state:nil];
+}
+
+- (void)showTasksFilteredByTag:(NSString *)tag
+                         state:(NSNumber *)state {
+    NSArray<PFVIPERStudyTask *> *tasks = [self.interactor tasksFilteredByTag:tag state:state];
+    NSString *title = [self.router titleForFilteredListWithTag:tag ?: @"" state:state];
+    if (tasks.count == 0) {
+        [self.view displayMessage:[self.router emptyMessageForTag:tag state:state] title:title];
+        return;
+    }
+    [self renderTasks:tasks title:title];
 }
 
 - (void)showPrioritySortedTasks {

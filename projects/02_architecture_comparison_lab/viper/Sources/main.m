@@ -26,10 +26,14 @@ int main(void) {
         [presenter showTasksFilteredByTag:@"architecture"];
         [presenter showTasksFilteredByTag:nil];
         [presenter showPrioritySortedTasks];
+        [presenter showTasksFilteredByTag:@"architecture"
+                                    state:@(PFVIPERStudyTaskStateBlocked)];
+        [presenter showTasksFilteredByTag:@"memory"
+                                    state:@(PFVIPERStudyTaskStateBlocked)];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil];
 
-        // Practice idea: combine blocked-only routing with priority sorting and keep query rules inside the interactor.
+        // Practice idea: combine blocked-only routing, priority sorting, and empty-state messaging while keeping query rules inside the interactor.
     }
     return 0;
 }

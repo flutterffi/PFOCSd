@@ -47,12 +47,25 @@
 }
 
 - (NSArray<PFMVVMStudyTaskViewModel *> *)taskViewModelsFilteredByTag:(NSString *)tag {
+    return [self taskViewModelsFilteredByTag:tag state:nil];
+}
+
+- (NSArray<PFMVVMStudyTaskViewModel *> *)taskViewModelsFilteredByTag:(NSString *)tag
+                                                               state:(NSNumber *)state {
     NSArray<PFMVVMStudyTask *> *sourceTasks = self.tasks;
     if (tag.length > 0) {
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PFMVVMStudyTask *task, NSDictionary<NSString *, id> *bindings) {
             return [task.tags containsObject:tag];
         }];
         sourceTasks = [sourceTasks filteredArrayUsingPredicate:predicate];
+    }
+
+    if (state != nil) {
+        PFMVVMStudyTaskState expectedState = (PFMVVMStudyTaskState)state.integerValue;
+        NSPredicate *statePredicate = [NSPredicate predicateWithBlock:^BOOL(PFMVVMStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return task.state == expectedState;
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:statePredicate];
     }
 
     return [self viewModelsFromTasks:sourceTasks];
@@ -74,6 +87,21 @@
         [viewModels addObject:[[PFMVVMStudyTaskViewModel alloc] initWithTask:task]];
     }
     return [viewModels copy];
+}
+
+- (NSString *)emptyMessageForTag:(NSString *)tag state:(NSNumber *)state {
+    NSMutableArray<NSString *> *parts = [NSMutableArray array];
+    if (tag.length > 0) {
+        [parts addObject:[NSString stringWithFormat:@"tag=%@", tag]];
+    }
+    if (state != nil) {
+        [parts addObject:[NSString stringWithFormat:@"state=%@", PFMVVMStudyTaskStateLabel((PFMVVMStudyTaskState)state.integerValue)]];
+    }
+    if (parts.count == 0) {
+        return @"no tasks matched this filter";
+    }
+    return [NSString stringWithFormat:@"no tasks matched %@",
+            [parts componentsJoinedByString:@", "]];
 }
 
 - (nullable NSString *)saveCurrentTasks:(NSError **)error {

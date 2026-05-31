@@ -50,14 +50,29 @@
 }
 
 - (NSArray<PFVIPERStudyTask *> *)tasksFilteredByTag:(NSString *)tag {
+    return [self tasksFilteredByTag:tag state:nil];
+}
+
+- (NSArray<PFVIPERStudyTask *> *)tasksFilteredByTag:(NSString *)tag
+                                              state:(NSNumber *)state {
+    NSArray<PFVIPERStudyTask *> *sourceTasks = self.tasks;
     if (tag.length == 0) {
-        return self.tasks;
+        sourceTasks = self.tasks;
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PFVIPERStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return [task.tags containsObject:tag];
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:predicate];
     }
 
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PFVIPERStudyTask *task, NSDictionary<NSString *, id> *bindings) {
-        return [task.tags containsObject:tag];
-    }];
-    return [self.tasks filteredArrayUsingPredicate:predicate];
+    if (state != nil) {
+        PFVIPERStudyTaskState expectedState = (PFVIPERStudyTaskState)state.integerValue;
+        NSPredicate *statePredicate = [NSPredicate predicateWithBlock:^BOOL(PFVIPERStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return task.state == expectedState;
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:statePredicate];
+    }
+    return sourceTasks;
 }
 
 - (NSArray<PFVIPERStudyTask *> *)prioritySortedTasks {

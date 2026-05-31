@@ -17,6 +17,10 @@ int main(void) {
         [controller renderTasks:[controller tasksFilteredByTag:@"architecture"] title:@"Filtered By Tag"];
         [controller renderTasks:controller.tasks title:@"Blocked State Added"];
         [controller renderTasks:[controller tasksSortedByPriorityFromTasks:controller.tasks] title:@"Priority Sorted"];
+        [controller renderTasks:[controller tasksFilteredByTag:@"architecture" state:@(PFMVCStudyTaskStateBlocked)]
+                          title:@"Combined Filter: architecture + blocked"];
+        [controller renderTasks:[controller tasksFilteredByTag:@"memory" state:@(PFMVCStudyTaskStateBlocked)]
+                          title:@"Combined Filter: memory + blocked"];
 
         NSError *error = nil;
         NSString *path = [controller saveCurrentTasks:&error];
@@ -26,7 +30,7 @@ int main(void) {
         }
         [controller renderTasks:controller.tasks title:@"Reloaded Tasks"];
 
-        // Practice idea: combine state filtering with priority sorting and watch how much branching stays in the controller.
+        // Practice idea: combine state filtering, priority sorting, and empty-state handling and watch how much branching stays in the controller.
     }
     return 0;
 }

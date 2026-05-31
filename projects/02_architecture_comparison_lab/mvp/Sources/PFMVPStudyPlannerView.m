@@ -13,4 +13,9 @@
     NSLog(@"saved path -> %@", path);
 }
 
+- (void)displayMessage:(NSString *)message title:(NSString *)title {
+    NSLog(@"[MVP] %@", title);
+    NSLog(@"%@", message);
+}
+
 @end

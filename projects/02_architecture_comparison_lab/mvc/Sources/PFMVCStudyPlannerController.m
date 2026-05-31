@@ -49,14 +49,29 @@
 }
 
 - (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(NSString *)tag {
+    return [self tasksFilteredByTag:tag state:nil];
+}
+
+- (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(NSString *)tag
+                                            state:(NSNumber *)state {
+    NSArray<PFMVCStudyTask *> *sourceTasks = self.tasks;
     if (tag.length == 0) {
-        return self.tasks;
+        sourceTasks = self.tasks;
+    } else {
+        NSPredicate *tagPredicate = [NSPredicate predicateWithBlock:^BOOL(PFMVCStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return [task.tags containsObject:tag];
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:tagPredicate];
     }
 
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PFMVCStudyTask *task, NSDictionary<NSString *, id> *bindings) {
-        return [task.tags containsObject:tag];
-    }];
-    return [self.tasks filteredArrayUsingPredicate:predicate];
+    if (state != nil) {
+        PFMVCStudyTaskState expectedState = (PFMVCStudyTaskState)state.integerValue;
+        NSPredicate *statePredicate = [NSPredicate predicateWithBlock:^BOOL(PFMVCStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return task.state == expectedState;
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:statePredicate];
+    }
+    return sourceTasks;
 }
 
 - (NSArray<PFMVCStudyTask *> *)tasksSortedByPriorityFromTasks:(NSArray<PFMVCStudyTask *> *)tasks {
@@ -83,6 +98,10 @@
 
 - (void)renderTasks:(NSArray<PFMVCStudyTask *> *)tasks title:(NSString *)title {
     NSLog(@"[MVC] %@", title);
+    if (tasks.count == 0) {
+        NSLog(@"no tasks matched this filter");
+        return;
+    }
     NSUInteger index = 0;
     for (PFMVCStudyTask *task in tasks) {
         NSLog(@"%lu. %@ | %@ | %ld min | %@",

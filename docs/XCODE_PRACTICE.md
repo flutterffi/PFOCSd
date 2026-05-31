@@ -58,6 +58,7 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 18. repeat one drill across all four architecture targets and record the result in `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
 19. use `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md` as the first guided architecture drill
 20. use `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md` as the second guided architecture drill
+21. use `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md` as the third guided architecture drill
 
 ## What To Change First
 

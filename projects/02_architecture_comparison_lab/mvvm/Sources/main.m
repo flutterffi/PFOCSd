@@ -20,6 +20,16 @@ int main(void) {
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:@"architecture"] title:@"Filtered By Tag"];
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Blocked State Added"];
         [view renderViewModels:[viewModel prioritySortedTaskViewModels] title:@"Priority Sorted"];
+        [view renderViewModels:[viewModel taskViewModelsFilteredByTag:@"architecture"
+                                                                state:@(PFMVVMStudyTaskStateBlocked)]
+                         title:@"Combined Filter: architecture + blocked"
+                  emptyMessage:[viewModel emptyMessageForTag:@"architecture"
+                                                      state:@(PFMVVMStudyTaskStateBlocked)]];
+        [view renderViewModels:[viewModel taskViewModelsFilteredByTag:@"memory"
+                                                                state:@(PFMVVMStudyTaskStateBlocked)]
+                         title:@"Combined Filter: memory + blocked"
+                  emptyMessage:[viewModel emptyMessageForTag:@"memory"
+                                                      state:@(PFMVVMStudyTaskStateBlocked)]];
 
         NSError *error = nil;
         NSString *path = [viewModel saveCurrentTasks:&error];
@@ -29,7 +39,7 @@ int main(void) {
         }
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Reloaded Tasks"];
 
-        // Practice idea: combine blocked-only screen state with priority sorting and keep all label shaping in the view-model layer.
+        // Practice idea: combine blocked-only screen state, priority sorting, and empty-state handling and keep the screen-state shaping in the view-model layer.
     }
     return 0;
 }

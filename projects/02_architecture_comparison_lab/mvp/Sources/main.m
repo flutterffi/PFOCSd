@@ -20,10 +20,16 @@ int main(void) {
         [presenter showTasksFilteredByTag:@"architecture" title:@"Filtered By Tag"];
         [presenter showTasksFilteredByTag:nil title:@"Blocked State Added"];
         [presenter showPrioritySortedTasksWithTitle:@"Priority Sorted"];
+        [presenter showTasksFilteredByTag:@"architecture"
+                                    state:@(PFMVPStudyTaskStateBlocked)
+                                    title:@"Combined Filter: architecture + blocked"];
+        [presenter showTasksFilteredByTag:@"memory"
+                                    state:@(PFMVPStudyTaskStateBlocked)
+                                    title:@"Combined Filter: memory + blocked"];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil title:@"Reloaded Tasks"];
 
-        // Practice idea: combine blocked-only rendering with priority sorting and keep the branching testable from the presenter.
+        // Practice idea: combine blocked-only rendering, priority sorting, and empty-state messaging and keep the branching testable from the presenter.
     }
     return 0;
 }

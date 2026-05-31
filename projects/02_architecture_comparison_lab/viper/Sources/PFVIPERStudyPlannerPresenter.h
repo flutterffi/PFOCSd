@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
 - (void)showTasksFilteredByTag:(nullable NSString *)tag;
+- (void)showTasksFilteredByTag:(nullable NSString *)tag
+                         state:(nullable NSNumber *)state;
 - (void)showPrioritySortedTasks;
 - (void)saveAndReload;
 @end

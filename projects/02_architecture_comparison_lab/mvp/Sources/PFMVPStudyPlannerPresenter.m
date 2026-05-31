@@ -49,12 +49,31 @@
 }
 
 - (void)showTasksFilteredByTag:(NSString *)tag title:(NSString *)title {
+    [self showTasksFilteredByTag:tag state:nil title:title];
+}
+
+- (void)showTasksFilteredByTag:(NSString *)tag
+                         state:(NSNumber *)state
+                         title:(NSString *)title {
     NSArray<PFMVPStudyTask *> *sourceTasks = self.tasks;
     if (tag.length > 0) {
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PFMVPStudyTask *task, NSDictionary<NSString *, id> *bindings) {
             return [task.tags containsObject:tag];
         }];
         sourceTasks = [sourceTasks filteredArrayUsingPredicate:predicate];
+    }
+
+    if (state != nil) {
+        PFMVPStudyTaskState expectedState = (PFMVPStudyTaskState)state.integerValue;
+        NSPredicate *statePredicate = [NSPredicate predicateWithBlock:^BOOL(PFMVPStudyTask *task, NSDictionary<NSString *, id> *bindings) {
+            return task.state == expectedState;
+        }];
+        sourceTasks = [sourceTasks filteredArrayUsingPredicate:statePredicate];
+    }
+
+    if (sourceTasks.count == 0) {
+        [self.view displayMessage:[self emptyMessageForTag:tag state:state] title:title];
+        return;
     }
 
     [self showLinesForTasks:sourceTasks title:title];
@@ -97,6 +116,21 @@
         index += 1;
     }
     [self.view displayLines:lines title:title];
+}
+
+- (NSString *)emptyMessageForTag:(NSString *)tag state:(NSNumber *)state {
+    NSMutableArray<NSString *> *parts = [NSMutableArray array];
+    if (tag.length > 0) {
+        [parts addObject:[NSString stringWithFormat:@"tag=%@", tag]];
+    }
+    if (state != nil) {
+        [parts addObject:[NSString stringWithFormat:@"state=%@", PFMVPStudyTaskStateLabel((PFMVPStudyTaskState)state.integerValue)]];
+    }
+    if (parts.count == 0) {
+        return @"no tasks matched this filter";
+    }
+    return [NSString stringWithFormat:@"no tasks matched %@",
+            [parts componentsJoinedByString:@", "]];
 }
 
 @end

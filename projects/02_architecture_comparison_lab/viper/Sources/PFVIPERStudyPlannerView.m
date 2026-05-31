@@ -13,4 +13,9 @@
     NSLog(@"%@", message);
 }
 
+- (void)displayMessage:(NSString *)message title:(NSString *)title {
+    NSLog(@"[VIPER] %@", title);
+    NSLog(@"%@", message);
+}
+
 @end

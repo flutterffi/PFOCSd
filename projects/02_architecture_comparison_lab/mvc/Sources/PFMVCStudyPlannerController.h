@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
 - (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(nullable NSString *)tag;
+- (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(nullable NSString *)tag
+                                            state:(nullable NSNumber *)state;
 - (NSArray<PFMVCStudyTask *> *)tasksSortedByPriorityFromTasks:(NSArray<PFMVCStudyTask *> *)tasks;
 - (nullable NSString *)saveCurrentTasks:(NSError **)error;
 - (BOOL)reloadTasksFromPath:(NSString *)path error:(NSError **)error;

@@ -72,6 +72,7 @@ Suggested feature set:
 - `COMPARISON_WORKBOOK.md`
 - `ROUND_1_BLOCKED_STATE.md`
 - `ROUND_2_PRIORITY_SUPPORT.md`
+- `ROUND_3_COMBINED_FILTERING.md`
 
 ## What To Write Down After Each Version
 
