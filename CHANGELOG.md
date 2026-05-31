@@ -102,3 +102,9 @@
 - Implemented the fourth shared architecture drill by adding a simulated save-failure path across MVC, MVVM, MVP, and VIPER.
 - Added architecture-specific save-feedback flows so persistence errors can be compared through controller, view-model, presenter, and router boundaries.
 - Added a focused round-four guide so failure ownership and storage-detail leakage are easy to review.
+
+## 1.0.0 - 2026-05-31
+
+- Declared the first stable training release of `PFOCSd` after completing the lesson tracks, direct Xcode targets, practical CLI project, and architecture comparison lab.
+- Added a final review guide so the full learning loop can be repeated from fundamentals through architecture drills without more repository restructuring.
+- Locked in the main training path so future additions can remain incremental instead of redefining the core structure.

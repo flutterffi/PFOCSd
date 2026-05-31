@@ -7,6 +7,7 @@ Use it like this:
 - `XCODE_PRACTICE.md`: open `Package.swift` and practice through Objective-C targets
 - `STUDY_PATHS.md`: choose a route based on your goal
 - `CHALLENGES.md`: pick one concrete change after reading example code
+- `FINAL_REVIEW.md`: use the first stable version as a full training checklist
 - `learning_paths/30_day_plan.md`: follow a day-by-day training loop
 
 Suggested order:
@@ -16,3 +17,4 @@ Suggested order:
 3. choose one route in `STUDY_PATHS.md`
 4. practice a lesson or project
 5. use `CHALLENGES.md` to extend what you just ran
+6. use `FINAL_REVIEW.md` when you want the stable end-to-end training loop

@@ -20,6 +20,7 @@ If you want the repository organized by training purpose, use this order:
 5. [Study Paths](./docs/STUDY_PATHS.md)
 6. [Challenges](./docs/CHALLENGES.md)
 7. [30 Day Plan](./docs/learning_paths/30_day_plan.md)
+8. [Final Review](./docs/FINAL_REVIEW.md)
 
 ## Direct Practice
 
@@ -233,3 +234,16 @@ Good modifications to try:
 - expand one KVC mapping rule
 - replace one concrete dependency with a protocol-backed collaborator
 - add one more state transition to the task board
+
+## Stable Release
+
+`1.0.0` marks the first stable training release of this repository.
+
+At this point the repository already supports:
+
+- lesson-based Objective-C practice
+- Xcode-first target-based hands-on work
+- project-based CLI practice
+- architecture comparison drills across MVC, MVVM, MVP, and VIPER
+
+If you want one final guided pass through the repository, use [docs/FINAL_REVIEW.md](./docs/FINAL_REVIEW.md).
