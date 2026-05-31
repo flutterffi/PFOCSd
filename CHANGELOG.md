@@ -30,3 +30,9 @@
 - Reorganized the advanced track into official-style subfolders for runtime and memory, Cocoa data flow, design patterns, and concurrency.
 - Added `docs/OFFICIAL_PATH.md` and `docs/PRACTICE_PATH.md` to separate system learning from repetition-focused drilling.
 - Added folder-level READMEs so each training area is easier to enter and use for hands-on practice.
+
+## 0.6.0 - 2026-05-31
+
+- Reorganized the foundations track into official-style language, language feature, and Foundation object folders.
+- Reorganized the intermediate track into Foundation data flow, workflow scheduling, and validation-focused folders.
+- Updated the root guide, study paths, challenge references, and build defaults to match the new foundations and intermediate layout.

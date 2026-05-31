@@ -1,6 +1,6 @@
 ROOT := $(CURDIR)
 BUILD_DIR := $(ROOT)/.build
-LESSON_FILE ?= foundations/01_nsstring_nsarray_nsdictionary.m
+LESSON_FILE ?= foundations/03_foundation_objects/01_nsstring_nsarray_nsdictionary.m
 FILE ?= $(LESSON_FILE)
 ARGS ?=
 LESSONS := $(shell find foundations intermediate advanced -name '*.m' | sort)

@@ -4,10 +4,10 @@ Use this guide if your goal is fast repetition, code changes, and hands-on muscl
 
 ## Sprint Order
 
-1. `foundations/02_classes_properties_and_initializers.m`
-2. `foundations/03_categories_and_lightweight_generics.m`
-3. `foundations/06_blocks_and_collection_transformations.m`
-4. `intermediate/03_file_persistence_and_serialization.m`
+1. `foundations/01_objective_c_language/01_classes_properties_and_initializers.m`
+2. `foundations/02_language_features/01_categories_and_lightweight_generics.m`
+3. `foundations/02_language_features/04_blocks_and_collection_transformations.m`
+4. `intermediate/01_foundation_data_flow/02_file_persistence_and_serialization.m`
 5. `advanced/01_runtime_and_memory/02_memory_management_and_blocks.m`
 6. `advanced/04_concurrency/01_gcd_operations_and_thread_safety.m`
 7. `projects/01_task_board_cli/main.m`

@@ -8,11 +8,11 @@ Start in `foundations/`.
 
 Recommended order:
 
-1. `foundations/02_classes_properties_and_initializers.m`
-2. `foundations/03_categories_and_lightweight_generics.m`
-3. `foundations/04_protocols_and_delegation_shape.m`
-4. `foundations/06_blocks_and_collection_transformations.m`
-5. `foundations/05_error_patterns_and_nullability_style.m`
+1. `foundations/01_objective_c_language/01_classes_properties_and_initializers.m`
+2. `foundations/02_language_features/01_categories_and_lightweight_generics.m`
+3. `foundations/02_language_features/02_protocols_and_delegation_shape.m`
+4. `foundations/02_language_features/04_blocks_and_collection_transformations.m`
+5. `foundations/02_language_features/03_error_patterns_and_nullability_style.m`
 
 ## Step 2: Foundation Framework
 
@@ -20,9 +20,9 @@ Continue with Foundation-heavy files.
 
 Recommended order:
 
-1. `foundations/01_nsstring_nsarray_nsdictionary.m`
-2. `intermediate/01_model_mapping_and_validation.m`
-3. `intermediate/03_file_persistence_and_serialization.m`
+1. `foundations/03_foundation_objects/01_nsstring_nsarray_nsdictionary.m`
+2. `intermediate/01_foundation_data_flow/01_model_mapping_and_validation.m`
+3. `intermediate/01_foundation_data_flow/02_file_persistence_and_serialization.m`
 
 ## Step 3: Cocoa Patterns And Data Flow
 
@@ -48,7 +48,7 @@ Finish with scheduling and thread-safety concerns.
 
 Recommended order:
 
-1. `intermediate/02_nsoperation_queue_pipeline.m`
+1. `intermediate/02_workflows_and_scheduling/01_nsoperation_queue_pipeline.m`
 2. `advanced/04_concurrency/01_gcd_operations_and_thread_safety.m`
 
 ## Step 6: Project Practice

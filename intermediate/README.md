@@ -1,23 +1,23 @@
 # Intermediate
 
-Use this folder when you want to move from syntax drills into small engineering habits.
+Use this folder when you want to move from syntax drills into official-style Foundation workflows and verification habits.
 
-What to do here:
+## Tracks
 
-1. run the file once
-2. inspect how data moves through the example
-3. add one rule or one extra field
-4. rerun and compare behavior
+1. `01_foundation_data_flow/`
+2. `02_workflows_and_scheduling/`
+3. `03_validation_and_verification/`
 
-Best files to start with:
+## Best Starting Order
 
-1. `01_model_mapping_and_validation.m`
-2. `03_file_persistence_and_serialization.m`
+1. `01_foundation_data_flow/01_model_mapping_and_validation.m`
+2. `01_foundation_data_flow/02_file_persistence_and_serialization.m`
+3. `02_workflows_and_scheduling/01_nsoperation_queue_pipeline.m`
+4. `03_validation_and_verification/01_testing_mindset_with_assertions.m`
 
-Good training focus:
+## Good Training Focus
 
-- validation
-- model mapping
+- model mapping and validation
 - file persistence
-- queue-based workflow
-- assertion-driven thinking
+- operation-based workflow
+- test and assertion mindset

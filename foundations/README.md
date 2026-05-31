@@ -1,24 +1,24 @@
 # Foundations
 
-Use this folder for fast, low-friction Objective-C syntax practice.
+Use this folder for low-friction Objective-C practice that is now grouped into official-style basics.
 
-What to do here:
+## Tracks
 
-1. run one file
-2. predict the output first
-3. change one value, property, or branch
-4. rerun it immediately
+1. `01_objective_c_language/`
+2. `02_language_features/`
+3. `03_foundation_objects/`
 
-Best files for a fresh start:
+## Best Starting Order
 
-1. `01_nsstring_nsarray_nsdictionary.m`
-2. `02_classes_properties_and_initializers.m`
-3. `03_categories_and_lightweight_generics.m`
+1. `01_objective_c_language/01_classes_properties_and_initializers.m`
+2. `02_language_features/01_categories_and_lightweight_generics.m`
+3. `02_language_features/02_protocols_and_delegation_shape.m`
+4. `02_language_features/04_blocks_and_collection_transformations.m`
+5. `03_foundation_objects/01_nsstring_nsarray_nsdictionary.m`
 
-Good training focus:
+## Good Training Focus
 
-- Foundation collections
-- classes and properties
-- categories
-- protocols
-- blocks
+- class and object basics
+- categories and protocols
+- blocks and error patterns
+- Foundation collection objects

@@ -44,12 +44,12 @@ Each file in `foundations/` is a standalone Objective-C language lesson.
 
 Suggested order:
 
-1. `01_nsstring_nsarray_nsdictionary.m`
-2. `02_classes_properties_and_initializers.m`
-3. `03_categories_and_lightweight_generics.m`
-4. `04_protocols_and_delegation_shape.m`
-5. `05_error_patterns_and_nullability_style.m`
-6. `06_blocks_and_collection_transformations.m`
+1. `01_objective_c_language/01_classes_properties_and_initializers.m`
+2. `02_language_features/01_categories_and_lightweight_generics.m`
+3. `02_language_features/02_protocols_and_delegation_shape.m`
+4. `02_language_features/03_error_patterns_and_nullability_style.m`
+5. `02_language_features/04_blocks_and_collection_transformations.m`
+6. `03_foundation_objects/01_nsstring_nsarray_nsdictionary.m`
 
 Topics covered:
 
@@ -66,10 +66,10 @@ The `intermediate/` folder moves from syntax drills into code organization and b
 
 Suggested order:
 
-1. `01_model_mapping_and_validation.m`
-2. `02_nsoperation_queue_pipeline.m`
-3. `03_file_persistence_and_serialization.m`
-4. `04_testing_mindset_with_assertions.m`
+1. `01_foundation_data_flow/01_model_mapping_and_validation.m`
+2. `01_foundation_data_flow/02_file_persistence_and_serialization.m`
+3. `02_workflows_and_scheduling/01_nsoperation_queue_pipeline.m`
+4. `03_validation_and_verification/01_testing_mindset_with_assertions.m`
 
 Topics covered:
 
@@ -120,7 +120,7 @@ This mini project practices:
 ```text
 PFOCSd/
   foundations/                # Objective-C language and Foundation basics
-  intermediate/               # design and organization drills
+  intermediate/               # Foundation workflows and verification drills
   advanced/                   # focused Objective-C advanced drills
   projects/                   # small runnable practice project
   docs/                       # study routes, challenge lists, and plans
@@ -132,7 +132,7 @@ From the repository root, you can now use:
 
 ```bash
 make list
-make run FILE=foundations/01_nsstring_nsarray_nsdictionary.m
+make run FILE=foundations/03_foundation_objects/01_nsstring_nsarray_nsdictionary.m
 make run FILE=advanced/04_concurrency/01_gcd_operations_and_thread_safety.m
 make run FILE=projects/01_task_board_cli/main.m
 make run FILE=projects/01_task_board_cli/main.m ARGS="--state done"
@@ -153,10 +153,10 @@ On macOS with Xcode Command Line Tools installed, run files like this:
 clang -fobjc-arc -framework Foundation advanced/01_runtime_and_memory/01_runtime_and_message_dispatch.m -o /tmp/pfocsd-01
 /tmp/pfocsd-01
 
-clang -fobjc-arc -framework Foundation foundations/03_categories_and_lightweight_generics.m -o /tmp/pfocsd-foundations-03
+clang -fobjc-arc -framework Foundation foundations/02_language_features/01_categories_and_lightweight_generics.m -o /tmp/pfocsd-foundations-03
 /tmp/pfocsd-foundations-03
 
-clang -fobjc-arc -framework Foundation intermediate/03_file_persistence_and_serialization.m -o /tmp/pfocsd-intermediate-03
+clang -fobjc-arc -framework Foundation intermediate/01_foundation_data_flow/02_file_persistence_and_serialization.m -o /tmp/pfocsd-intermediate-03
 /tmp/pfocsd-intermediate-03
 
 clang -fobjc-arc -framework Foundation advanced/04_concurrency/01_gcd_operations_and_thread_safety.m -o /tmp/pfocsd-05
