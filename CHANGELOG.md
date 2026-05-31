@@ -78,3 +78,9 @@
 - Added shared architecture challenge prompts so MVC, MVVM, MVP, and VIPER can be trained with the same change requests instead of disconnected demos.
 - Added a comparison workbook to record tradeoffs around state ownership, boilerplate, testability, and navigation after each drill.
 - Expanded each architecture guide with target-specific edit entry points so hands-on practice starts from the right files instead of guesswork.
+
+## 0.14.0 - 2026-05-31
+
+- Implemented the first shared architecture drill by adding a runnable `blocked` task state across MVC, MVVM, MVP, and VIPER.
+- Added explicit blocked-state actions in each architecture target so the same interaction can be traced through different responsibility splits.
+- Added a focused round-one guide so the first architecture comparison exercise is concrete, repeatable, and easy to review.

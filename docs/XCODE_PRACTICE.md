@@ -56,6 +56,7 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 16. compare `P04StudyPlannerMVP`
 17. compare `P05StudyPlannerVIPER`
 18. repeat one drill across all four architecture targets and record the result in `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
+19. use `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md` as the first guided architecture drill
 
 ## What To Change First
 

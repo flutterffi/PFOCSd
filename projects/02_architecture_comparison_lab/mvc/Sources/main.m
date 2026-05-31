@@ -12,7 +12,9 @@ int main(void) {
                                 tags:@[@"architecture", @"comparison"]
                     estimatedMinutes:35];
         [controller markTaskDoneAtIndex:0];
+        [controller markTaskBlockedAtIndex:2];
         [controller renderTasks:[controller tasksFilteredByTag:@"architecture"] title:@"Filtered By Tag"];
+        [controller renderTasks:controller.tasks title:@"Blocked State Added"];
 
         NSError *error = nil;
         NSString *path = [controller saveCurrentTasks:&error];
@@ -22,7 +24,7 @@ int main(void) {
         }
         [controller renderTasks:controller.tasks title:@"Reloaded Tasks"];
 
-        // Practice idea: move title formatting out of the controller and watch what still leaks back in.
+        // Practice idea: add state-based filtering and watch how much branching stays in the controller.
     }
     return 0;
 }

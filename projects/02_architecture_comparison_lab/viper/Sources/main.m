@@ -21,11 +21,13 @@ int main(void) {
                                tags:@[@"architecture", @"comparison"]
                    estimatedMinutes:40];
         [presenter markTaskDoneAtIndex:0];
+        [presenter markTaskBlockedAtIndex:2];
         [presenter showTasksFilteredByTag:@"architecture"];
+        [presenter showTasksFilteredByTag:nil];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil];
 
-        // Practice idea: extract line formatting into a dedicated presenter view model builder.
+        // Practice idea: add blocked-only routing and keep filtering rules inside the interactor.
     }
     return 0;
 }

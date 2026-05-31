@@ -5,7 +5,13 @@ static NSString *PFVIPERPlannerPath(void) {
 }
 
 static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
-    return [value isEqualToString:@"done"] ? PFVIPERStudyTaskStateDone : PFVIPERStudyTaskStateTodo;
+    if ([value isEqualToString:@"done"]) {
+        return PFVIPERStudyTaskStateDone;
+    }
+    if ([value isEqualToString:@"blocked"]) {
+        return PFVIPERStudyTaskStateBlocked;
+    }
+    return PFVIPERStudyTaskStateTodo;
 }
 
 @implementation PFVIPERStudyTaskStore
@@ -21,7 +27,7 @@ static PFVIPERStudyTaskState PFVIPERStateFromString(NSString *value) {
                                           notes:@"keep storage details inside the interactor"
                                            tags:@[@"persistence", @"interactor"]
                                estimatedMinutes:30
-                                          state:PFVIPERStudyTaskStateTodo],
+                                          state:PFVIPERStudyTaskStateBlocked],
     ];
 }
 

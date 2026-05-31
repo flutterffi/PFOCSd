@@ -4,6 +4,8 @@ NSString *PFVIPERStudyTaskStateLabel(PFVIPERStudyTaskState state) {
     switch (state) {
         case PFVIPERStudyTaskStateDone:
             return @"done";
+        case PFVIPERStudyTaskStateBlocked:
+            return @"blocked";
         case PFVIPERStudyTaskStateTodo:
         default:
             return @"todo";

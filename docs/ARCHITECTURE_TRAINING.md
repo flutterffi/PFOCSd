@@ -36,6 +36,7 @@ Core practice files:
 - `projects/02_architecture_comparison_lab/feature_brief.md`
 - `projects/02_architecture_comparison_lab/CHALLENGES.md`
 - `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
+- `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md`
 
 ## Shared Feature Brief
 

@@ -4,6 +4,8 @@ NSString *PFMVVMStudyTaskStateLabel(PFMVVMStudyTaskState state) {
     switch (state) {
         case PFMVVMStudyTaskStateTodo:
             return @"todo";
+        case PFMVVMStudyTaskStateBlocked:
+            return @"blocked";
         case PFMVVMStudyTaskStateDone:
             return @"done";
     }

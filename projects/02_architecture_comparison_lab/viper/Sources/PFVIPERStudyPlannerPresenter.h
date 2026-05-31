@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
                    notes:(NSString *)notes
                     tags:(NSArray<NSString *> *)tags
         estimatedMinutes:(NSInteger)estimatedMinutes;
+- (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
 - (void)showTasksFilteredByTag:(nullable NSString *)tag;
 - (void)saveAndReload;

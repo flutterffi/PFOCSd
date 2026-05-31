@@ -70,6 +70,7 @@ Suggested feature set:
 - `feature_brief.md`
 - `CHALLENGES.md`
 - `COMPARISON_WORKBOOK.md`
+- `ROUND_1_BLOCKED_STATE.md`
 
 ## What To Write Down After Each Version
 

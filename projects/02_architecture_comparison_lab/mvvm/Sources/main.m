@@ -15,7 +15,9 @@ int main(void) {
                                tags:@[@"architecture", @"comparison"]
                    estimatedMinutes:35];
         [viewModel markTaskDoneAtIndex:0];
+        [viewModel markTaskBlockedAtIndex:2];
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:@"architecture"] title:@"Filtered By Tag"];
+        [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Blocked State Added"];
 
         NSError *error = nil;
         NSString *path = [viewModel saveCurrentTasks:&error];
@@ -25,7 +27,7 @@ int main(void) {
         }
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Reloaded Tasks"];
 
-        // Practice idea: add derived screen state and compare how little the view needs to know.
+        // Practice idea: add a blocked-only screen state and keep all label shaping in the view model layer.
     }
     return 0;
 }

@@ -5,7 +5,13 @@ static NSString *PFMVCPlannerPath(void) {
 }
 
 static PFMVCStudyTaskState PFMVCStateFromString(NSString *value) {
-    return [value isEqualToString:@"done"] ? PFMVCStudyTaskStateDone : PFMVCStudyTaskStateTodo;
+    if ([value isEqualToString:@"done"]) {
+        return PFMVCStudyTaskStateDone;
+    }
+    if ([value isEqualToString:@"blocked"]) {
+        return PFMVCStudyTaskStateBlocked;
+    }
+    return PFMVCStudyTaskStateTodo;
 }
 
 @implementation PFMVCStudyTaskStore
@@ -21,7 +27,7 @@ static PFMVCStudyTaskState PFMVCStateFromString(NSString *value) {
                                         notes:@"map payload into model"
                                          tags:@[@"data-flow", @"kvc"]
                              estimatedMinutes:30
-                                        state:PFMVCStudyTaskStateTodo],
+                                        state:PFMVCStudyTaskStateBlocked],
     ];
 }
 

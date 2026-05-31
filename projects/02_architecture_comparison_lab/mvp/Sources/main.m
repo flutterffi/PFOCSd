@@ -15,11 +15,13 @@ int main(void) {
                                tags:@[@"architecture", @"comparison"]
                    estimatedMinutes:35];
         [presenter markTaskDoneAtIndex:0];
+        [presenter markTaskBlockedAtIndex:2];
         [presenter showTasksFilteredByTag:@"architecture" title:@"Filtered By Tag"];
+        [presenter showTasksFilteredByTag:nil title:@"Blocked State Added"];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil title:@"Reloaded Tasks"];
 
-        // Practice idea: add a view protocol method for errors and move all display decisions into the presenter.
+        // Practice idea: add blocked-only rendering and keep the branching testable from the presenter.
     }
     return 0;
 }

@@ -40,6 +40,13 @@
     self.tasks[index].state = PFVIPERStudyTaskStateDone;
 }
 
+- (void)markTaskBlockedAtIndex:(NSUInteger)index {
+    if (index >= self.tasks.count) {
+        return;
+    }
+    self.tasks[index].state = PFVIPERStudyTaskStateBlocked;
+}
+
 - (NSArray<PFVIPERStudyTask *> *)tasksFilteredByTag:(NSString *)tag {
     if (tag.length == 0) {
         return self.tasks;

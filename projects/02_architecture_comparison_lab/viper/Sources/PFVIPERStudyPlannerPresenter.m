@@ -34,6 +34,10 @@
     [self.interactor markTaskDoneAtIndex:index];
 }
 
+- (void)markTaskBlockedAtIndex:(NSUInteger)index {
+    [self.interactor markTaskBlockedAtIndex:index];
+}
+
 - (void)showTasksFilteredByTag:(NSString *)tag {
     [self renderTasks:[self.interactor tasksFilteredByTag:tag]
                 title:[self.router titleForFilteredListWithTag:tag ?: @""]];
