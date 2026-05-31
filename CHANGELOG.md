@@ -24,3 +24,9 @@
 - Added a `PFTaskRendering` protocol to decouple board rendering from the CLI entry point.
 - Kept the existing verbose renderer and added a new `PFCompactRenderer`.
 - Added `--format verbose|compact` support and documented the new output modes.
+
+## 0.5.0 - 2026-05-31
+
+- Reorganized the advanced track into official-style subfolders for runtime and memory, Cocoa data flow, design patterns, and concurrency.
+- Added `docs/OFFICIAL_PATH.md` and `docs/PRACTICE_PATH.md` to separate system learning from repetition-focused drilling.
+- Added folder-level READMEs so each training area is easier to enter and use for hands-on practice.

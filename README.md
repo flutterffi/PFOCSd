@@ -9,13 +9,32 @@ The goal is simple:
 - practice design tradeoffs that still matter in modern Apple-platform codebases
 - connect Objective-C language features to small real tasks instead of isolated trivia
 
-## Study Plans
+## Start Here
 
-If you want a guided route instead of picking files manually, start here:
+If you want the repository organized by training purpose, use this order:
 
-- [STUDY_PATHS.md](./STUDY_PATHS.md)
-- [30 Day Plan](./learning_paths/30_day_plan.md)
-- [CHALLENGES.md](./CHALLENGES.md)
+1. [Practice Map](./docs/PRACTICE_MAP.md)
+2. [Official Path](./docs/OFFICIAL_PATH.md)
+3. [Practice Path](./docs/PRACTICE_PATH.md)
+4. [Study Paths](./docs/STUDY_PATHS.md)
+5. [Challenges](./docs/CHALLENGES.md)
+6. [30 Day Plan](./docs/learning_paths/30_day_plan.md)
+
+## Folder Guide
+
+- `foundations/`: small syntax drills for daily warm-up practice
+- `intermediate/`: slightly more realistic code organization drills
+- `advanced/`: deeper runtime, memory, KVC/KVO, and concurrency practice
+- `projects/`: hands-on project work and practical feature building
+- `docs/`: study routes, challenge lists, and training plans
+
+Open these local guides when entering a folder:
+
+- [foundations/README.md](./foundations/README.md)
+- [intermediate/README.md](./intermediate/README.md)
+- [advanced/README.md](./advanced/README.md)
+- [projects/README.md](./projects/README.md)
+- [docs/README.md](./docs/README.md)
 
 ## Learning Path
 
@@ -61,15 +80,15 @@ Topics covered:
 
 ### 3. Advanced Lessons
 
-Each file in `advanced/` is a self-contained Foundation-based advanced training lesson.
+The `advanced/` folder is now grouped by official-style tracks instead of one flat list.
 
 Suggested order:
 
-1. `01_runtime_and_message_dispatch.m`
-2. `02_memory_management_and_blocks.m`
-3. `03_kvc_kvo_and_model_mapping.m`
-4. `04_protocols_categories_and_service_design.m`
-5. `05_gcd_operations_and_thread_safety.m`
+1. `01_runtime_and_memory/01_runtime_and_message_dispatch.m`
+2. `01_runtime_and_memory/02_memory_management_and_blocks.m`
+3. `02_cocoa_data_flow/01_kvc_kvo_and_model_mapping.m`
+4. `03_design_patterns/01_protocols_categories_and_service_design.m`
+5. `04_concurrency/01_gcd_operations_and_thread_safety.m`
 
 Topics covered:
 
@@ -101,12 +120,10 @@ This mini project practices:
 ```text
 PFOCSd/
   foundations/                # Objective-C language and Foundation basics
-  intermediate/              # design and organization drills
+  intermediate/               # design and organization drills
   advanced/                   # focused Objective-C advanced drills
   projects/                   # small runnable practice project
-  learning_paths/             # guided study plans
-  STUDY_PATHS.md              # route chooser
-  CHALLENGES.md               # change-driven training tasks
+  docs/                       # study routes, challenge lists, and plans
 ```
 
 ## Commands You Can Use Later
@@ -116,13 +133,13 @@ From the repository root, you can now use:
 ```bash
 make list
 make run FILE=foundations/01_nsstring_nsarray_nsdictionary.m
-make run FILE=advanced/05_gcd_operations_and_thread_safety.m
+make run FILE=advanced/04_concurrency/01_gcd_operations_and_thread_safety.m
 make run FILE=projects/01_task_board_cli/main.m
 make run FILE=projects/01_task_board_cli/main.m ARGS="--state done"
-make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json"
-make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json --state doing"
+make run FILE=projects/01_task_board_cli/main.m ARGS="--load projects/01_task_board_cli/data/sample_tasks.json"
+make run FILE=projects/01_task_board_cli/main.m ARGS="--load projects/01_task_board_cli/data/sample_tasks.json --state doing"
 make run FILE=projects/01_task_board_cli/main.m ARGS="--format compact"
-make run FILE=projects/01_task_board_cli/main.m ARGS="--load data/sample_tasks.json --format compact"
+make run FILE=projects/01_task_board_cli/main.m ARGS="--load projects/01_task_board_cli/data/sample_tasks.json --format compact"
 make run FILE=projects/01_task_board_cli/main.m ARGS="--save /tmp/pfocsd-tasks.json"
 make check
 make clean
@@ -133,7 +150,7 @@ You can also still compile files manually:
 On macOS with Xcode Command Line Tools installed, run files like this:
 
 ```bash
-clang -fobjc-arc -framework Foundation advanced/01_runtime_and_message_dispatch.m -o /tmp/pfocsd-01
+clang -fobjc-arc -framework Foundation advanced/01_runtime_and_memory/01_runtime_and_message_dispatch.m -o /tmp/pfocsd-01
 /tmp/pfocsd-01
 
 clang -fobjc-arc -framework Foundation foundations/03_categories_and_lightweight_generics.m -o /tmp/pfocsd-foundations-03
@@ -142,12 +159,12 @@ clang -fobjc-arc -framework Foundation foundations/03_categories_and_lightweight
 clang -fobjc-arc -framework Foundation intermediate/03_file_persistence_and_serialization.m -o /tmp/pfocsd-intermediate-03
 /tmp/pfocsd-intermediate-03
 
-clang -fobjc-arc -framework Foundation advanced/05_gcd_operations_and_thread_safety.m -o /tmp/pfocsd-05
+clang -fobjc-arc -framework Foundation advanced/04_concurrency/01_gcd_operations_and_thread_safety.m -o /tmp/pfocsd-05
 /tmp/pfocsd-05
 
 clang -fobjc-arc -framework Foundation projects/01_task_board_cli/*.m -o /tmp/pfocsd-task-board
 /tmp/pfocsd-task-board
-/tmp/pfocsd-task-board --load data/sample_tasks.json
+/tmp/pfocsd-task-board --load projects/01_task_board_cli/data/sample_tasks.json
 /tmp/pfocsd-task-board --state done
 /tmp/pfocsd-task-board --format compact
 /tmp/pfocsd-task-board --save /tmp/pfocsd-tasks.json
