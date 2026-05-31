@@ -13,7 +13,11 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 1. `F01ClassesAndProperties`
 2. `F02CategoriesAndProtocols`
 3. `F03FoundationObjects`
-4. `P01TaskBoardCLI`
+4. `I01ModelMappingValidation`
+5. `I02FilePersistence`
+6. `I03OperationPipeline`
+7. `I04TestingMindset`
+8. `P01TaskBoardCLI`
 
 ## How To Open
 
@@ -28,7 +32,11 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 1. start with `F01ClassesAndProperties`
 2. move to `F02CategoriesAndProtocols`
 3. move to `F03FoundationObjects`
-4. finish with `P01TaskBoardCLI`
+4. move to `I01ModelMappingValidation`
+5. move to `I02FilePersistence`
+6. move to `I03OperationPipeline`
+7. move to `I04TestingMindset`
+8. finish with `P01TaskBoardCLI`
 
 ## What To Change First
 

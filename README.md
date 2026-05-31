@@ -30,6 +30,10 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `F01ClassesAndProperties`
 - `F02CategoriesAndProtocols`
 - `F03FoundationObjects`
+- `I01ModelMappingValidation`
+- `I02FilePersistence`
+- `I03OperationPipeline`
+- `I04TestingMindset`
 - `P01TaskBoardCLI`
 
 ## Folder Guide

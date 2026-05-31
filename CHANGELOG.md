@@ -42,3 +42,9 @@
 - Added a multi-target Objective-C Swift Package so the repository can be opened directly in Xcode through `Package.swift`.
 - Added hands-on practice targets for classes and properties, categories and protocols, Foundation objects, and the task board CLI.
 - Added `docs/XCODE_PRACTICE.md` so the new direct-practice workflow is easy to follow.
+
+## 0.8.0 - 2026-05-31
+
+- Added intermediate Objective-C practice targets for model mapping, file persistence, operation pipelines, and assertion-driven verification.
+- Expanded the package so the repository now supports direct Xcode practice across foundations, intermediate lessons, and the task board project.
+- Added visible extension points inside the new intermediate targets so they can be used as progressive practice exercises instead of read-only examples.
