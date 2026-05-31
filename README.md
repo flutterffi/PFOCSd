@@ -45,6 +45,12 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `P04StudyPlannerMVP`
 - `P05StudyPlannerVIPER`
 
+For architecture comparison training, also use:
+
+- `projects/02_architecture_comparison_lab/feature_brief.md`
+- `projects/02_architecture_comparison_lab/CHALLENGES.md`
+- `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
+
 ## Folder Guide
 
 - `foundations/`: small syntax drills for daily warm-up practice

@@ -65,6 +65,12 @@ Suggested feature set:
 - `P04StudyPlannerMVP`
 - `P05StudyPlannerVIPER`
 
+## Practice Assets
+
+- `feature_brief.md`
+- `CHALLENGES.md`
+- `COMPARISON_WORKBOOK.md`
+
 ## What To Write Down After Each Version
 
 1. what got simpler

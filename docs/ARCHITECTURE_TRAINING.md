@@ -31,6 +31,12 @@ Inside that lab, keep one shared feature brief and multiple implementations:
 - `mvp/`
 - `viper/`
 
+Core practice files:
+
+- `projects/02_architecture_comparison_lab/feature_brief.md`
+- `projects/02_architecture_comparison_lab/CHALLENGES.md`
+- `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
+
 ## Shared Feature Brief
 
 All architectures should implement the same small app so the comparison stays fair.
@@ -182,6 +188,22 @@ After each implementation, write down:
 4. navigation complexity
 5. state ownership clarity
 6. boilerplate cost
+
+## How To Turn This Into Real Practice
+
+Use one change request at a time across all four implementations.
+
+Suggested order:
+
+1. run the current target
+2. pick one drill from `CHALLENGES.md`
+3. implement it in MVC
+4. implement the same drill in MVVM
+5. implement the same drill in MVP
+6. implement the same drill in VIPER
+7. fill in `COMPARISON_WORKBOOK.md`
+
+This prevents “architecture tourism” where you only read file names without feeling the tradeoffs in code.
 
 ## Best Repository Strategy For This Project
 
