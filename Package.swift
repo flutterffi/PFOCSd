@@ -14,6 +14,11 @@ let package = Package(
         .executable(name: "I02FilePersistence", targets: ["I02FilePersistence"]),
         .executable(name: "I03OperationPipeline", targets: ["I03OperationPipeline"]),
         .executable(name: "I04TestingMindset", targets: ["I04TestingMindset"]),
+        .executable(name: "A01RuntimeDispatch", targets: ["A01RuntimeDispatch"]),
+        .executable(name: "A02MemoryAndBlocks", targets: ["A02MemoryAndBlocks"]),
+        .executable(name: "A03KVCAndKVO", targets: ["A03KVCAndKVO"]),
+        .executable(name: "A04DesignPatterns", targets: ["A04DesignPatterns"]),
+        .executable(name: "A05Concurrency", targets: ["A05Concurrency"]),
         .executable(name: "P01TaskBoardCLI", targets: ["P01TaskBoardCLI"]),
     ],
     targets: [
@@ -62,6 +67,41 @@ let package = Package(
         .executableTarget(
             name: "I04TestingMindset",
             path: "Sources/I04TestingMindset",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A01RuntimeDispatch",
+            path: "Sources/A01RuntimeDispatch",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A02MemoryAndBlocks",
+            path: "Sources/A02MemoryAndBlocks",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A03KVCAndKVO",
+            path: "Sources/A03KVCAndKVO",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A04DesignPatterns",
+            path: "Sources/A04DesignPatterns",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A05Concurrency",
+            path: "Sources/A05Concurrency",
             linkerSettings: [
                 .linkedFramework("Foundation"),
             ]

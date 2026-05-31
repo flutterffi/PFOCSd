@@ -34,6 +34,11 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `I02FilePersistence`
 - `I03OperationPipeline`
 - `I04TestingMindset`
+- `A01RuntimeDispatch`
+- `A02MemoryAndBlocks`
+- `A03KVCAndKVO`
+- `A04DesignPatterns`
+- `A05Concurrency`
 - `P01TaskBoardCLI`
 
 ## Folder Guide

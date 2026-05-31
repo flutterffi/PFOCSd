@@ -17,7 +17,12 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 5. `I02FilePersistence`
 6. `I03OperationPipeline`
 7. `I04TestingMindset`
-8. `P01TaskBoardCLI`
+8. `A01RuntimeDispatch`
+9. `A02MemoryAndBlocks`
+10. `A03KVCAndKVO`
+11. `A04DesignPatterns`
+12. `A05Concurrency`
+13. `P01TaskBoardCLI`
 
 ## How To Open
 
@@ -36,7 +41,12 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 5. move to `I02FilePersistence`
 6. move to `I03OperationPipeline`
 7. move to `I04TestingMindset`
-8. finish with `P01TaskBoardCLI`
+8. move to `A01RuntimeDispatch`
+9. move to `A02MemoryAndBlocks`
+10. move to `A03KVCAndKVO`
+11. move to `A04DesignPatterns`
+12. move to `A05Concurrency`
+13. finish with `P01TaskBoardCLI`
 
 ## What To Change First
 

@@ -48,3 +48,9 @@
 - Added intermediate Objective-C practice targets for model mapping, file persistence, operation pipelines, and assertion-driven verification.
 - Expanded the package so the repository now supports direct Xcode practice across foundations, intermediate lessons, and the task board project.
 - Added visible extension points inside the new intermediate targets so they can be used as progressive practice exercises instead of read-only examples.
+
+## 0.9.0 - 2026-05-31
+
+- Added advanced Objective-C practice targets for runtime dispatch, memory and blocks, KVC and KVO, design patterns, and concurrency.
+- Expanded the direct Xcode practice flow so the repository now covers foundations, intermediate lessons, advanced lessons, and the task board project through one package entry point.
+- Added visible extension prompts inside the new advanced targets so they can be used for progressive hands-on training instead of passive review.
