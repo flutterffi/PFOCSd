@@ -42,6 +42,8 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `P01TaskBoardCLI`
 - `P02StudyPlannerMVC`
 - `P03StudyPlannerMVVM`
+- `P04StudyPlannerMVP`
+- `P05StudyPlannerVIPER`
 
 ## Folder Guide
 

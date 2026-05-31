@@ -25,6 +25,8 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 13. `P01TaskBoardCLI`
 14. `P02StudyPlannerMVC`
 15. `P03StudyPlannerMVVM`
+16. `P04StudyPlannerMVP`
+17. `P05StudyPlannerVIPER`
 
 ## How To Open
 
@@ -51,6 +53,8 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 13. move to `P01TaskBoardCLI`
 14. compare `P02StudyPlannerMVC`
 15. compare `P03StudyPlannerMVVM`
+16. compare `P04StudyPlannerMVP`
+17. compare `P05StudyPlannerVIPER`
 
 ## What To Change First
 

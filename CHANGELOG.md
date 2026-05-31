@@ -66,3 +66,9 @@
 - Added a runnable MVP implementation to the architecture comparison lab using a presenter and view protocol boundary.
 - Expanded the package so MVC, MVVM, and MVP can now be compared directly against the same study planner feature brief.
 - Updated the architecture lab progress docs so the next step is a focused VIPER implementation instead of a broad redesign.
+
+## 0.12.0 - 2026-05-31
+
+- Added a runnable VIPER implementation to the architecture comparison lab with separate entity, interactor, presenter, router, and view layers.
+- Expanded the package and Xcode practice guide so MVC, MVVM, MVP, and VIPER can now be compared directly against the same study planner feature brief.
+- Added a dedicated VIPER practice guide so the training focus stays on responsibility boundaries instead of file-count trivia.

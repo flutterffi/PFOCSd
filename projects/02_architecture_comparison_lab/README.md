@@ -16,7 +16,7 @@ Current progress:
 - MVC: scaffolded as a runnable package target
 - MVVM: scaffolded as a runnable package target
 - MVP: scaffolded as a runnable package target
-- VIPER: planned
+- VIPER: scaffolded as a runnable package target
 
 ## Core Rule
 
@@ -57,6 +57,13 @@ Suggested feature set:
 2. rebuild the same feature with MVVM
 3. rebuild the same feature with MVP
 4. rebuild the same feature with VIPER
+
+## Current Runnable Targets
+
+- `P02StudyPlannerMVC`
+- `P03StudyPlannerMVVM`
+- `P04StudyPlannerMVP`
+- `P05StudyPlannerVIPER`
 
 ## What To Write Down After Each Version
 

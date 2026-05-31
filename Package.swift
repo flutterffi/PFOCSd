@@ -22,6 +22,7 @@ let package = Package(
         .executable(name: "P02StudyPlannerMVC", targets: ["P02StudyPlannerMVC"]),
         .executable(name: "P03StudyPlannerMVVM", targets: ["P03StudyPlannerMVVM"]),
         .executable(name: "P04StudyPlannerMVP", targets: ["P04StudyPlannerMVP"]),
+        .executable(name: "P05StudyPlannerVIPER", targets: ["P05StudyPlannerVIPER"]),
         .executable(name: "P01TaskBoardCLI", targets: ["P01TaskBoardCLI"]),
     ],
     targets: [
@@ -126,6 +127,13 @@ let package = Package(
         .executableTarget(
             name: "P04StudyPlannerMVP",
             path: "projects/02_architecture_comparison_lab/mvp/Sources",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "P05StudyPlannerVIPER",
+            path: "projects/02_architecture_comparison_lab/viper/Sources",
             linkerSettings: [
                 .linkedFramework("Foundation"),
             ]
