@@ -36,3 +36,9 @@
 - Reorganized the foundations track into official-style language, language feature, and Foundation object folders.
 - Reorganized the intermediate track into Foundation data flow, workflow scheduling, and validation-focused folders.
 - Updated the root guide, study paths, challenge references, and build defaults to match the new foundations and intermediate layout.
+
+## 0.7.0 - 2026-05-31
+
+- Added a multi-target Objective-C Swift Package so the repository can be opened directly in Xcode through `Package.swift`.
+- Added hands-on practice targets for classes and properties, categories and protocols, Foundation objects, and the task board CLI.
+- Added `docs/XCODE_PRACTICE.md` so the new direct-practice workflow is easy to follow.

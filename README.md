@@ -13,12 +13,24 @@ The goal is simple:
 
 If you want the repository organized by training purpose, use this order:
 
-1. [Practice Map](./docs/PRACTICE_MAP.md)
-2. [Official Path](./docs/OFFICIAL_PATH.md)
-3. [Practice Path](./docs/PRACTICE_PATH.md)
-4. [Study Paths](./docs/STUDY_PATHS.md)
-5. [Challenges](./docs/CHALLENGES.md)
-6. [30 Day Plan](./docs/learning_paths/30_day_plan.md)
+1. [Xcode Practice](./docs/XCODE_PRACTICE.md)
+2. [Practice Map](./docs/PRACTICE_MAP.md)
+3. [Official Path](./docs/OFFICIAL_PATH.md)
+4. [Practice Path](./docs/PRACTICE_PATH.md)
+5. [Study Paths](./docs/STUDY_PATHS.md)
+6. [Challenges](./docs/CHALLENGES.md)
+7. [30 Day Plan](./docs/learning_paths/30_day_plan.md)
+
+## Direct Practice
+
+If your goal is direct hands-on training in Xcode, open `Package.swift`.
+
+This repository now includes multi-target Objective-C practice targets with `.h` and `.m` files:
+
+- `F01ClassesAndProperties`
+- `F02CategoriesAndProtocols`
+- `F03FoundationObjects`
+- `P01TaskBoardCLI`
 
 ## Folder Guide
 
@@ -27,6 +39,7 @@ If you want the repository organized by training purpose, use this order:
 - `advanced/`: deeper runtime, memory, KVC/KVO, and concurrency practice
 - `projects/`: hands-on project work and practical feature building
 - `docs/`: study routes, challenge lists, and training plans
+- `Sources/`: direct Xcode practice targets for progressive training
 
 Open these local guides when entering a folder:
 
@@ -124,6 +137,8 @@ PFOCSd/
   advanced/                   # focused Objective-C advanced drills
   projects/                   # small runnable practice project
   docs/                       # study routes, challenge lists, and plans
+  Sources/                    # multi-target Objective-C practice entry points
+  Package.swift               # open this in Xcode for direct training
 ```
 
 ## Commands You Can Use Later
