@@ -10,6 +10,7 @@ This repository now includes:
 - direct Xcode practice targets through `Package.swift`
 - one practical CLI project: `P01TaskBoardCLI`
 - one advanced runtime interception target: `A06RuntimeInterception`
+- one advanced operation orchestration target: `A07OperationCancellation`
 - one architecture comparison lab with:
   - `P02StudyPlannerMVC`
   - `P03StudyPlannerMVVM`
@@ -31,7 +32,8 @@ This repository now includes:
 3. move through `F02CategoriesAndProtocols` and `F03FoundationObjects`
 4. continue into intermediate and advanced targets
 5. do `A06RuntimeInterception` before leaving the advanced runtime track
-6. finish with `P01TaskBoardCLI`
+6. do `A07OperationCancellation` before leaving the advanced concurrency track
+7. finish with `P01TaskBoardCLI`
 
 ### Architecture Track
 

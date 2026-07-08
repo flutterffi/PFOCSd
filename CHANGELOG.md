@@ -120,3 +120,9 @@
 - Added a new advanced runtime training target, `A06RuntimeInterception`, focused on method swizzling, fast forwarding, and full invocation forwarding.
 - Added a matching standalone advanced lesson so the same runtime interception ideas can be studied both as a compact file and as a multi-file Xcode target.
 - Expanded the advanced training guides so the runtime track now goes beyond dispatch basics into interception and forwarding mechanics.
+
+## 1.3.0 - 2026-07-08
+
+- Added a new advanced concurrency training target, `A07OperationCancellation`, focused on operation cancellation, dependency-aware sequencing, and producer-side backpressure.
+- Added a matching standalone advanced lesson so cancellation-aware orchestration can be studied both as a compact file and as a multi-file Xcode target.
+- Expanded the advanced training guides so the concurrency track now goes beyond queue basics into cancellable workflow coordination.
