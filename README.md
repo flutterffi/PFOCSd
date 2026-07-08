@@ -42,6 +42,7 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `A05Concurrency`
 - `A06RuntimeInterception`
 - `A07OperationCancellation`
+- `A08RunLoopCoordination`
 - `P01TaskBoardCLI`
 - `P02StudyPlannerMVC`
 - `P03StudyPlannerMVVM`
@@ -131,6 +132,7 @@ Suggested order:
 5. `03_design_patterns/01_protocols_categories_and_service_design.m`
 6. `04_concurrency/01_gcd_operations_and_thread_safety.m`
 7. `04_concurrency/02_operation_cancellation_and_backpressure.m`
+8. `04_concurrency/03_run_loop_timers_and_sources.m`
 
 Topics covered:
 
@@ -141,6 +143,7 @@ Topics covered:
 - protocols, categories, lightweight generics, and dependency boundaries
 - GCD, `NSOperationQueue`, barriers, and thread-safe state management
 - operation cancellation, dependency-aware sequencing, and producer-side backpressure
+- run loop workers, timer delivery, and thread-bound event coordination
 
 ### 4. Project Practice
 

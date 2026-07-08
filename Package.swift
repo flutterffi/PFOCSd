@@ -21,6 +21,7 @@ let package = Package(
         .executable(name: "A05Concurrency", targets: ["A05Concurrency"]),
         .executable(name: "A06RuntimeInterception", targets: ["A06RuntimeInterception"]),
         .executable(name: "A07OperationCancellation", targets: ["A07OperationCancellation"]),
+        .executable(name: "A08RunLoopCoordination", targets: ["A08RunLoopCoordination"]),
         .executable(name: "P02StudyPlannerMVC", targets: ["P02StudyPlannerMVC"]),
         .executable(name: "P03StudyPlannerMVVM", targets: ["P03StudyPlannerMVVM"]),
         .executable(name: "P04StudyPlannerMVP", targets: ["P04StudyPlannerMVP"]),
@@ -122,6 +123,13 @@ let package = Package(
         .executableTarget(
             name: "A07OperationCancellation",
             path: "Sources/A07OperationCancellation",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A08RunLoopCoordination",
+            path: "Sources/A08RunLoopCoordination",
             linkerSettings: [
                 .linkedFramework("Foundation"),
             ]

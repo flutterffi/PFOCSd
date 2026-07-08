@@ -126,3 +126,9 @@
 - Added a new advanced concurrency training target, `A07OperationCancellation`, focused on operation cancellation, dependency-aware sequencing, and producer-side backpressure.
 - Added a matching standalone advanced lesson so cancellation-aware orchestration can be studied both as a compact file and as a multi-file Xcode target.
 - Expanded the advanced training guides so the concurrency track now goes beyond queue basics into cancellable workflow coordination.
+
+## 1.4.0 - 2026-07-08
+
+- Added a new advanced scheduling training target, `A08RunLoopCoordination`, focused on run loop workers, timer delivery, and thread-bound event coordination.
+- Added a matching standalone advanced lesson so run loop and timer behavior can be studied both as a compact file and as a multi-file Xcode target.
+- Expanded the advanced training guides so the concurrency track now includes Cocoa-style scheduling mechanics alongside GCD and operations.

@@ -27,10 +27,11 @@ This stage is now grouped by official-style capability tracks instead of one fla
 5. `03_design_patterns/01_protocols_categories_and_service_design.m`
 6. `04_concurrency/01_gcd_operations_and_thread_safety.m`
 7. `04_concurrency/02_operation_cancellation_and_backpressure.m`
+8. `04_concurrency/03_run_loop_timers_and_sources.m`
 
 ## Why This Layout Matches Better
 
 - `runtime_and_memory`: selectors, ARC, object lifetime, dynamic dispatch, and runtime interception
 - `cocoa_data_flow`: KVC, KVO, and model observation patterns
 - `design_patterns`: protocols, categories, and service boundaries
-- `concurrency`: GCD, operations, cancellation-aware orchestration, producer backpressure, and thread-safe state
+- `concurrency`: GCD, operations, cancellation-aware orchestration, run loop coordination, producer backpressure, and thread-safe state

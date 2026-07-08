@@ -11,6 +11,7 @@ This repository now includes:
 - one practical CLI project: `P01TaskBoardCLI`
 - one advanced runtime interception target: `A06RuntimeInterception`
 - one advanced operation orchestration target: `A07OperationCancellation`
+- one advanced run loop coordination target: `A08RunLoopCoordination`
 - one architecture comparison lab with:
   - `P02StudyPlannerMVC`
   - `P03StudyPlannerMVVM`
@@ -33,7 +34,8 @@ This repository now includes:
 4. continue into intermediate and advanced targets
 5. do `A06RuntimeInterception` before leaving the advanced runtime track
 6. do `A07OperationCancellation` before leaving the advanced concurrency track
-7. finish with `P01TaskBoardCLI`
+7. do `A08RunLoopCoordination` before leaving the advanced Cocoa scheduling track
+8. finish with `P01TaskBoardCLI`
 
 ### Architecture Track
 
