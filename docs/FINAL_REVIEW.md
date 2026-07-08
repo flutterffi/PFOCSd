@@ -9,16 +9,18 @@ This repository now includes:
 - foundations, intermediate, and advanced Objective-C lesson tracks
 - direct Xcode practice targets through `Package.swift`
 - one practical CLI project: `P01TaskBoardCLI`
+- one advanced runtime interception target: `A06RuntimeInterception`
 - one architecture comparison lab with:
   - `P02StudyPlannerMVC`
   - `P03StudyPlannerMVVM`
   - `P04StudyPlannerMVP`
   - `P05StudyPlannerVIPER`
-- four guided architecture drills:
+- five guided architecture drills:
   - `ROUND_1_BLOCKED_STATE.md`
   - `ROUND_2_PRIORITY_SUPPORT.md`
   - `ROUND_3_COMBINED_FILTERING.md`
   - `ROUND_4_PERSISTENCE_FEEDBACK.md`
+  - `ROUND_5_EDIT_FLOW.md`
 
 ## Best Way To Learn This Repository
 
@@ -28,7 +30,8 @@ This repository now includes:
 2. run `F01ClassesAndProperties`
 3. move through `F02CategoriesAndProtocols` and `F03FoundationObjects`
 4. continue into intermediate and advanced targets
-5. finish with `P01TaskBoardCLI`
+5. do `A06RuntimeInterception` before leaving the advanced runtime track
+6. finish with `P01TaskBoardCLI`
 
 ### Architecture Track
 
@@ -51,6 +54,7 @@ This repository now includes:
 8. `ROUND_2_PRIORITY_SUPPORT.md`
 9. `ROUND_3_COMBINED_FILTERING.md`
 10. `ROUND_4_PERSISTENCE_FEEDBACK.md`
+11. `ROUND_5_EDIT_FLOW.md`
 
 ## What To Do Next As A Learner
 
@@ -61,6 +65,6 @@ This repository now includes:
 
 ## Stable Release Meaning
 
-`1.0.0` means this repository is ready for hands-on Objective-C training without needing more structural work first.
+`1.x` means this repository is ready for hands-on Objective-C training without needing more structural work first.
 
 Future work can still extend it, but the main training loop is already complete.

@@ -40,6 +40,7 @@ This repository now includes multi-target Objective-C practice targets with `.h`
 - `A03KVCAndKVO`
 - `A04DesignPatterns`
 - `A05Concurrency`
+- `A06RuntimeInterception`
 - `P01TaskBoardCLI`
 - `P02StudyPlannerMVC`
 - `P03StudyPlannerMVVM`
@@ -124,14 +125,16 @@ Suggested order:
 
 1. `01_runtime_and_memory/01_runtime_and_message_dispatch.m`
 2. `01_runtime_and_memory/02_memory_management_and_blocks.m`
-3. `02_cocoa_data_flow/01_kvc_kvo_and_model_mapping.m`
-4. `03_design_patterns/01_protocols_categories_and_service_design.m`
-5. `04_concurrency/01_gcd_operations_and_thread_safety.m`
+3. `01_runtime_and_memory/03_method_swizzling_and_forwarding.m`
+4. `02_cocoa_data_flow/01_kvc_kvo_and_model_mapping.m`
+5. `03_design_patterns/01_protocols_categories_and_service_design.m`
+6. `04_concurrency/01_gcd_operations_and_thread_safety.m`
 
 Topics covered:
 
 - selectors, `objc_msgSend`, and runtime-style dispatch thinking
 - ARC behavior, copy semantics, retain cycles, and blocks
+- method swizzling, fast forwarding, and full invocation forwarding
 - KVC, KVO, dynamic lookup, and safe model transformation
 - protocols, categories, lightweight generics, and dependency boundaries
 - GCD, `NSOperationQueue`, barriers, and thread-safe state management

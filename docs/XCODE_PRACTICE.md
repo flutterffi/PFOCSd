@@ -22,11 +22,12 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 10. `A03KVCAndKVO`
 11. `A04DesignPatterns`
 12. `A05Concurrency`
-13. `P01TaskBoardCLI`
-14. `P02StudyPlannerMVC`
-15. `P03StudyPlannerMVVM`
-16. `P04StudyPlannerMVP`
-17. `P05StudyPlannerVIPER`
+13. `A06RuntimeInterception`
+14. `P01TaskBoardCLI`
+15. `P02StudyPlannerMVC`
+16. `P03StudyPlannerMVVM`
+17. `P04StudyPlannerMVP`
+18. `P05StudyPlannerVIPER`
 
 ## How To Open
 
@@ -50,17 +51,18 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 10. move to `A03KVCAndKVO`
 11. move to `A04DesignPatterns`
 12. move to `A05Concurrency`
-13. move to `P01TaskBoardCLI`
-14. compare `P02StudyPlannerMVC`
-15. compare `P03StudyPlannerMVVM`
-16. compare `P04StudyPlannerMVP`
-17. compare `P05StudyPlannerVIPER`
-18. repeat one drill across all four architecture targets and record the result in `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
-19. use `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md` as the first guided architecture drill
-20. use `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md` as the second guided architecture drill
-21. use `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md` as the third guided architecture drill
-22. use `projects/02_architecture_comparison_lab/ROUND_4_PERSISTENCE_FEEDBACK.md` as the fourth guided architecture drill
-23. use `projects/02_architecture_comparison_lab/ROUND_5_EDIT_FLOW.md` as the fifth guided architecture drill
+13. move to `A06RuntimeInterception`
+14. move to `P01TaskBoardCLI`
+15. compare `P02StudyPlannerMVC`
+16. compare `P03StudyPlannerMVVM`
+17. compare `P04StudyPlannerMVP`
+18. compare `P05StudyPlannerVIPER`
+19. repeat one drill across all four architecture targets and record the result in `projects/02_architecture_comparison_lab/COMPARISON_WORKBOOK.md`
+20. use `projects/02_architecture_comparison_lab/ROUND_1_BLOCKED_STATE.md` as the first guided architecture drill
+21. use `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md` as the second guided architecture drill
+22. use `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md` as the third guided architecture drill
+23. use `projects/02_architecture_comparison_lab/ROUND_4_PERSISTENCE_FEEDBACK.md` as the fourth guided architecture drill
+24. use `projects/02_architecture_comparison_lab/ROUND_5_EDIT_FLOW.md` as the fifth guided architecture drill
 
 ## What To Change First
 

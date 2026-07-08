@@ -19,6 +19,7 @@ let package = Package(
         .executable(name: "A03KVCAndKVO", targets: ["A03KVCAndKVO"]),
         .executable(name: "A04DesignPatterns", targets: ["A04DesignPatterns"]),
         .executable(name: "A05Concurrency", targets: ["A05Concurrency"]),
+        .executable(name: "A06RuntimeInterception", targets: ["A06RuntimeInterception"]),
         .executable(name: "P02StudyPlannerMVC", targets: ["P02StudyPlannerMVC"]),
         .executable(name: "P03StudyPlannerMVVM", targets: ["P03StudyPlannerMVVM"]),
         .executable(name: "P04StudyPlannerMVP", targets: ["P04StudyPlannerMVP"]),
@@ -106,6 +107,13 @@ let package = Package(
         .executableTarget(
             name: "A05Concurrency",
             path: "Sources/A05Concurrency",
+            linkerSettings: [
+                .linkedFramework("Foundation"),
+            ]
+        ),
+        .executableTarget(
+            name: "A06RuntimeInterception",
+            path: "Sources/A06RuntimeInterception",
             linkerSettings: [
                 .linkedFramework("Foundation"),
             ]

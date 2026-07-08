@@ -114,3 +114,9 @@
 - Implemented the fifth shared architecture drill by adding a task edit flow across MVC, MVVM, MVP, and VIPER.
 - Added edited-task rerender flows in every architecture target so workflow orchestration can be compared directly after filtering, sorting, and persistence drills.
 - Added a focused round-five guide so edit ownership and post-action render flow are easy to review.
+
+## 1.2.0 - 2026-07-08
+
+- Added a new advanced runtime training target, `A06RuntimeInterception`, focused on method swizzling, fast forwarding, and full invocation forwarding.
+- Added a matching standalone advanced lesson so the same runtime interception ideas can be studied both as a compact file and as a multi-file Xcode target.
+- Expanded the advanced training guides so the runtime track now goes beyond dispatch basics into interception and forwarding mechanics.
