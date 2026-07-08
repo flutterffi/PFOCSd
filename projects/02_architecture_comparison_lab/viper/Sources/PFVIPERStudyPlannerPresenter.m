@@ -40,6 +40,10 @@
     [self.interactor markTaskBlockedAtIndex:index];
 }
 
+- (void)editTaskAtIndex:(NSUInteger)index estimatedMinutes:(NSInteger)estimatedMinutes {
+    [self.interactor editTaskAtIndex:index estimatedMinutes:estimatedMinutes];
+}
+
 - (void)showTasksFilteredByTag:(NSString *)tag {
     [self showTasksFilteredByTag:tag state:nil];
 }

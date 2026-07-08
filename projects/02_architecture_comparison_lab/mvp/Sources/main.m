@@ -26,12 +26,14 @@ int main(void) {
         [presenter showTasksFilteredByTag:@"memory"
                                     state:@(PFMVPStudyTaskStateBlocked)
                                     title:@"Combined Filter: memory + blocked"];
+        [presenter editTaskAtIndex:1 estimatedMinutes:45];
+        [presenter showTasksFilteredByTag:nil title:@"Edited Task Flow"];
         [presenter saveAndReload];
         [presenter simulateNextSaveFailure];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil title:@"Reloaded Tasks"];
 
-        // Practice idea: compare how much easier save-failure narration is once the presenter owns the branch.
+        // Practice idea: compare how much easier edit orchestration and save-failure narration feel once the presenter owns the branch.
     }
     return 0;
 }

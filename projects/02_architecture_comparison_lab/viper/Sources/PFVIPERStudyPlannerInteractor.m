@@ -49,6 +49,13 @@
     self.tasks[index].state = PFVIPERStudyTaskStateBlocked;
 }
 
+- (void)editTaskAtIndex:(NSUInteger)index estimatedMinutes:(NSInteger)estimatedMinutes {
+    if (index >= self.tasks.count) {
+        return;
+    }
+    self.tasks[index].estimatedMinutes = estimatedMinutes;
+}
+
 - (NSArray<PFVIPERStudyTask *> *)tasksFilteredByTag:(NSString *)tag {
     return [self tasksFilteredByTag:tag state:nil];
 }

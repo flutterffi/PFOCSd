@@ -21,6 +21,8 @@ int main(void) {
                           title:@"Combined Filter: architecture + blocked"];
         [controller renderTasks:[controller tasksFilteredByTag:@"memory" state:@(PFMVCStudyTaskStateBlocked)]
                           title:@"Combined Filter: memory + blocked"];
+        [controller editTaskAtIndex:1 estimatedMinutes:45];
+        [controller renderTasks:controller.tasks title:@"Edited Task Flow"];
 
         NSError *error = nil;
         NSString *path = [controller saveCurrentTasks:&error];
@@ -34,7 +36,7 @@ int main(void) {
         NSLog(@"%@", failedPath != nil ? @"unexpected save success" : error.localizedDescription);
         [controller renderTasks:controller.tasks title:@"Reloaded Tasks"];
 
-        // Practice idea: compare how much persistence detail leaks out once MVC handles the save-failure branch at the entry point.
+        // Practice idea: compare how much persistence detail leaks out once MVC handles both edit orchestration and save-failure branching at the entry point.
     }
     return 0;
 }

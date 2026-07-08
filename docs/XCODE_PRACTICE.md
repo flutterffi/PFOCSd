@@ -60,6 +60,7 @@ Each target is meant to be opened, edited, built, and rerun inside Xcode.
 20. use `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md` as the second guided architecture drill
 21. use `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md` as the third guided architecture drill
 22. use `projects/02_architecture_comparison_lab/ROUND_4_PERSISTENCE_FEEDBACK.md` as the fourth guided architecture drill
+23. use `projects/02_architecture_comparison_lab/ROUND_5_EDIT_FLOW.md` as the fifth guided architecture drill
 
 ## What To Change First
 

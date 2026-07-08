@@ -30,6 +30,8 @@ int main(void) {
                          title:@"Combined Filter: memory + blocked"
                   emptyMessage:[viewModel emptyMessageForTag:@"memory"
                                                       state:@(PFMVVMStudyTaskStateBlocked)]];
+        [viewModel editTaskAtIndex:1 estimatedMinutes:45];
+        [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Edited Task Flow"];
 
         NSError *error = nil;
         NSString *path = [viewModel saveCurrentTasks:&error];
@@ -43,7 +45,7 @@ int main(void) {
         NSLog(@"%@", [viewModel saveFeedbackMessageForPath:failedPath error:error]);
         [view renderViewModels:[viewModel taskViewModelsFilteredByTag:nil] title:@"Reloaded Tasks"];
 
-        // Practice idea: compare how much cleaner save-failure wording feels once the view model owns the feedback text.
+        // Practice idea: compare how much cleaner edit and save feedback feel once the view model owns the screen-state shaping.
     }
     return 0;
 }

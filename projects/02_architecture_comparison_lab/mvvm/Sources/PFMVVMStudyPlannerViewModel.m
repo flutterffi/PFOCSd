@@ -46,6 +46,14 @@
     task.state = PFMVVMStudyTaskStateBlocked;
 }
 
+- (void)editTaskAtIndex:(NSUInteger)index estimatedMinutes:(NSInteger)estimatedMinutes {
+    if (index >= self.tasks.count) {
+        return;
+    }
+    PFMVVMStudyTask *task = self.tasks[index];
+    task.estimatedMinutes = estimatedMinutes;
+}
+
 - (NSArray<PFMVVMStudyTaskViewModel *> *)taskViewModelsFilteredByTag:(NSString *)tag {
     return [self taskViewModelsFilteredByTag:tag state:nil];
 }

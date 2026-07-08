@@ -55,6 +55,7 @@ For architecture comparison training, also use:
 - `projects/02_architecture_comparison_lab/ROUND_2_PRIORITY_SUPPORT.md`
 - `projects/02_architecture_comparison_lab/ROUND_3_COMBINED_FILTERING.md`
 - `projects/02_architecture_comparison_lab/ROUND_4_PERSISTENCE_FEEDBACK.md`
+- `projects/02_architecture_comparison_lab/ROUND_5_EDIT_FLOW.md`
 
 ## Folder Guide
 

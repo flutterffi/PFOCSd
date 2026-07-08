@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
         estimatedMinutes:(NSInteger)estimatedMinutes;
 - (void)markTaskBlockedAtIndex:(NSUInteger)index;
 - (void)markTaskDoneAtIndex:(NSUInteger)index;
+- (void)editTaskAtIndex:(NSUInteger)index estimatedMinutes:(NSInteger)estimatedMinutes;
 - (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(nullable NSString *)tag;
 - (NSArray<PFMVCStudyTask *> *)tasksFilteredByTag:(nullable NSString *)tag
                                             state:(nullable NSNumber *)state;

@@ -30,12 +30,14 @@ int main(void) {
                                     state:@(PFVIPERStudyTaskStateBlocked)];
         [presenter showTasksFilteredByTag:@"memory"
                                     state:@(PFVIPERStudyTaskStateBlocked)];
+        [presenter editTaskAtIndex:1 estimatedMinutes:45];
+        [presenter showTasksFilteredByTag:nil];
         [presenter saveAndReload];
         [presenter simulateNextSaveFailure];
         [presenter saveAndReload];
         [presenter showTasksFilteredByTag:nil];
 
-        // Practice idea: compare how much cleaner save-failure messaging feels once the router and presenter share the narration work.
+        // Practice idea: compare how much cleaner edit orchestration and save-failure messaging feel once the router and presenter share the narration work.
     }
     return 0;
 }

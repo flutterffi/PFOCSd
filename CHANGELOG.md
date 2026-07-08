@@ -108,3 +108,9 @@
 - Declared the first stable training release of `PFOCSd` after completing the lesson tracks, direct Xcode targets, practical CLI project, and architecture comparison lab.
 - Added a final review guide so the full learning loop can be repeated from fundamentals through architecture drills without more repository restructuring.
 - Locked in the main training path so future additions can remain incremental instead of redefining the core structure.
+
+## 1.1.0 - 2026-07-08
+
+- Implemented the fifth shared architecture drill by adding a task edit flow across MVC, MVVM, MVP, and VIPER.
+- Added edited-task rerender flows in every architecture target so workflow orchestration can be compared directly after filtering, sorting, and persistence drills.
+- Added a focused round-five guide so edit ownership and post-action render flow are easy to review.

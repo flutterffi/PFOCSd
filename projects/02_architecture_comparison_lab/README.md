@@ -74,6 +74,7 @@ Suggested feature set:
 - `ROUND_2_PRIORITY_SUPPORT.md`
 - `ROUND_3_COMBINED_FILTERING.md`
 - `ROUND_4_PERSISTENCE_FEEDBACK.md`
+- `ROUND_5_EDIT_FLOW.md`
 
 ## What To Write Down After Each Version
 
